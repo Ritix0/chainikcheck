@@ -1,0 +1,2616 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChainikCheck - Калькулятор CBM и доставки карго из Китая | Себестоимость партии</title>
+  <meta name="description" content="Онлайн-калькулятор CBM объема, веса и стоимости карго-доставки грузов из Китая (Гуанчжоу, Иу) в Россию с расчетом себестоимости партии и 1 единицы товара.">
+  <meta name="keywords" content="калькулятор доставки из китая, расчет cbm, карго доставка китай, себестоимость товара китай, доставка 20 футов, инкотермс 2020, chainikcheck, чайникчек">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://chainikcheck.ru/">
+
+  <!-- Favicon и иконки вкладки браузера (Единый персонаж Си Ши с глазками и удачей 吉) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20width%3D%2246%22%20height%3D%2234%22%20viewBox%3D%2282%2046%20312%20206%22%20fill%3D%22none%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3ClinearGradient%20id%3D%22logo-tp-body%22%20x1%3D%2215%25%22%20y1%3D%2210%25%22%20x2%3D%2285%25%22%20y2%3D%2290%25%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23ff7f5c%22/%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%2242%25%22%20stop-color%3D%22%23ea580c%22/%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%2285%25%22%20stop-color%3D%22%239a3412%22/%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%236c2207%22/%3E%0A%20%20%20%20%3C/linearGradient%3E%0A%20%20%20%20%3CradialGradient%20id%3D%22logo-knob-glow%22%20cx%3D%2235%25%22%20cy%3D%2230%25%22%20r%3D%2265%25%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23ffffff%22%20stop-opacity%3D%220.6%22/%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%2240%25%22%20stop-color%3D%22%23ff8e70%22%20stop-opacity%3D%220.2%22/%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%237c2d12%22%20stop-opacity%3D%220%22/%3E%0A%20%20%20%20%3C/radialGradient%3E%0A%20%20%3C/defs%3E%0A%0A%20%20%3C%21--%20%D0%A2%D0%B5%D0%BB%D0%BE%20%D1%87%D0%B0%D0%B9%D0%BD%D0%B8%D1%87%D0%BA%D0%B0%20%D0%A1%D0%B8%20%D0%A8%D0%B8%20%28%D1%82%D0%BE%D1%87%D0%BD%D0%BE%D0%B5%20%D1%81%D0%BE%D0%B2%D0%BF%D0%B0%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5%20%D1%81%20%D0%BF%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D0%B0%D0%B6%D0%B5%D0%BC%20Hero%29%20--%3E%0A%20%20%3Cpath%20d%3D%22M%20204.6%2051.5%20L%20201.0%2052.8%20L%20197.8%2054.8%20L%20195.4%2057.5%20L%20194.2%2060.7%20L%20194.5%2064.6%20L%20195.7%2068.6%20L%20196.7%2072.3%20L%20196.8%2075.3%20L%20194.9%2076.9%20L%20191.0%2077.5%20L%20186.7%2077.8%20L%20182.9%2078.4%20L%20179.3%2079.2%20L%20175.7%2080.1%20L%20172.1%2081.1%20L%20168.4%2082.1%20L%20164.7%2083.3%20L%20161.0%2084.6%20L%20157.4%2086.0%20L%20153.9%2087.6%20L%20150.5%2089.4%20L%20147.3%2091.3%20L%20144.2%2093.3%20L%20141.3%2095.4%20L%20138.4%2097.6%20L%20135.5%2099.8%20L%20132.5%20102.0%20L%20129.5%20104.2%20L%20126.4%20106.2%20L%20123.1%20107.8%20L%20119.0%20108.2%20L%20115.0%20107.4%20L%20111.0%20106.0%20L%20107.0%20104.2%20L%20103.0%20102.2%20L%2099.4%20105.5%20L%2095.8%20108.9%20L%2092.1%20112.2%20L%2088.5%20115.5%20L%2089.2%20118.0%20L%2091.1%20120.5%20L%2093.3%20122.4%20L%2095.4%20125.6%20L%2097.3%20128.9%20L%2099.0%20132.3%20L%20100.4%20135.8%20L%20101.6%20139.3%20L%20102.5%20143.0%20L%20103.1%20146.7%20L%20103.5%20150.6%20L%20103.7%20154.5%20L%20103.9%20158.4%20L%20103.9%20162.3%20L%20104.1%20166.2%20L%20104.3%20170.1%20L%20104.7%20173.8%20L%20105.3%20177.5%20L%20106.0%20181.1%20L%20106.8%20184.7%20L%20107.8%20188.2%20L%20108.9%20191.6%20L%20110.3%20194.9%20L%20111.8%20198.1%20L%20113.4%20201.3%20L%20115.2%20204.4%20L%20117.0%20207.5%20L%20119.0%20210.6%20L%20121.1%20213.6%20L%20123.4%20216.6%20L%20125.7%20219.5%20L%20128.1%20222.3%20L%20130.6%20225.0%20L%20133.2%20227.6%20L%20136.0%20230.1%20L%20138.9%20232.4%20L%20141.9%20234.5%20L%20145.1%20236.4%20L%20148.4%20238.1%20L%20151.9%20239.5%20L%20155.5%20240.7%20L%20159.1%20241.7%20L%20162.8%20242.6%20L%20166.5%20243.3%20L%20170.3%20244.0%20L%20174.0%20244.5%20L%20177.8%20244.9%20L%20181.6%20245.2%20L%20185.5%20245.4%20L%20189.4%20245.6%20L%20193.3%20245.7%20L%20197.2%20245.8%20L%20201.1%20245.8%20L%20205.1%20245.9%20L%20209.1%20245.8%20L%20213.1%20245.8%20L%20217.1%20245.8%20L%20221.1%20245.8%20L%20225.2%20245.8%20L%20229.2%20245.7%20L%20233.3%20245.6%20L%20237.3%20245.5%20L%20241.3%20245.3%20L%20245.3%20245.0%20L%20249.2%20244.6%20L%20253.1%20244.1%20L%20257.0%20243.5%20L%20260.8%20242.8%20L%20264.5%20241.9%20L%20268.2%20240.9%20L%20271.7%20239.7%20L%20275.2%20238.3%20L%20278.6%20236.7%20L%20281.9%20235.0%20L%20285.2%20233.0%20L%20288.4%20230.9%20L%20291.5%20228.5%20L%20294.5%20226.0%20L%20297.3%20223.3%20L%20300.0%20220.4%20L%20302.5%20217.4%20L%20304.8%20214.3%20L%20306.8%20211.0%20L%20308.7%20207.7%20L%20310.6%20204.9%20L%20313.4%20203.7%20L%20317.0%20204.0%20L%20320.7%20204.9%20L%20324.3%20205.8%20L%20327.9%20206.7%20L%20331.6%20207.5%20L%20335.4%20208.2%20L%20339.4%20208.7%20L%20343.4%20208.9%20L%20347.5%20208.8%20L%20351.6%20208.5%20L%20355.6%20207.8%20L%20359.3%20206.8%20L%20362.8%20205.3%20L%20366.1%20203.6%20L%20369.3%20201.6%20L%20372.3%20199.3%20L%20375.1%20196.7%20L%20377.7%20194.0%20L%20380.1%20191.0%20L%20382.2%20187.8%20L%20384.1%20184.5%20L%20385.8%20181.1%20L%20387.2%20177.5%20L%20388.4%20173.8%20L%20389.3%20170.1%20L%20390.0%20166.3%20L%20390.4%20162.4%20L%20390.5%20158.6%20L%20390.4%20154.7%20L%20390.0%20150.9%20L%20389.4%20147.1%20L%20388.5%20143.4%20L%20387.4%20139.7%20L%20386.1%20136.1%20L%20384.5%20132.6%20L%20382.7%20129.2%20L%20380.7%20125.9%20L%20378.4%20122.8%20L%20375.9%20119.8%20L%20373.3%20117.0%20L%20370.4%20114.4%20L%20367.3%20112.0%20L%20364.1%20109.8%20L%20360.7%20107.8%20L%20357.2%20106.1%20L%20353.6%20104.7%20L%20349.9%20103.5%20L%20346.1%20102.7%20L%20342.3%20102.2%20L%20338.4%20102.0%20L%20334.6%20102.2%20L%20330.7%20102.7%20L%20326.8%20103.7%20L%20323.0%20105.0%20L%20319.2%20106.4%20L%20315.5%20107.8%20L%20311.9%20108.9%20L%20308.4%20109.6%20L%20304.9%20109.8%20L%20301.4%20109.2%20L%20298.1%20107.8%20L%20294.9%20105.8%20L%20291.9%20103.4%20L%20289.0%20100.9%20L%20286.1%2098.4%20L%20283.1%2095.9%20L%20280.1%2093.5%20L%20277.0%2091.3%20L%20273.8%2089.3%20L%20270.5%2087.5%20L%20267.1%2086.0%20L%20263.6%2084.6%20L%20260.0%2083.4%20L%20256.4%2082.3%20L%20252.7%2081.3%20L%20249.0%2080.4%20L%20245.2%2079.6%20L%20241.4%2078.9%20L%20237.5%2078.3%20L%20233.6%2077.7%20L%20229.8%2077.1%20L%20226.3%2076.4%20L%20223.8%2075.1%20L%20222.9%2072.8%20L%20223.8%2069.2%20L%20225.4%2065.1%20L%20226.2%2060.9%20L%20225.4%2057.3%20L%20222.8%2054.6%20L%20219.5%2052.5%20L%20215.7%2051.2%20L%20211.9%2050.6%20L%20208.2%2050.8%20Z%20M%20335.2%20119.2%20C%20344.0%20118.0%20354.0%20120.5%20361.5%20127.5%20C%20370.0%20135.5%20373.0%20148.0%20371.5%20160.0%20C%20370.0%20172.0%20363.0%20182.0%20351.5%20186.5%20C%20342.0%20190.0%20331.0%20188.0%20324.5%20180.5%20C%20318.0%20173.0%20317.0%20160.0%20318.5%20147.5%20C%20319.5%20137.0%20325.5%20121.0%20335.2%20119.2%20Z%22%20fill%3D%22url%28%23logo-tp-body%29%22%20stroke%3D%22%237c2d12%22%20stroke-width%3D%223%22%20fill-rule%3D%22evenodd%22%20stroke-linejoin%3D%22round%22/%3E%0A%0A%20%20%3C%21--%20%D0%9B%D0%B8%D0%BD%D0%B8%D0%B8%20%D0%BE%D0%B1%D0%BE%D0%B4%D0%BA%D0%B0%20%D0%BA%D1%80%D1%8B%D1%88%D0%BA%D0%B8%20%D0%B8%20%D0%B1%D0%BB%D0%B8%D0%BA%20%D1%80%D1%83%D1%87%D0%BA%D0%B8%20--%3E%0A%20%20%3Cpath%20d%3D%22M%20132%20105%20C%20168%20116%20250%20116%20288%20105%22%20fill%3D%22none%22%20stroke%3D%22%23541c09%22%20stroke-width%3D%222.5%22%20opacity%3D%220.6%22/%3E%0A%20%20%3Ccircle%20cx%3D%22210%22%20cy%3D%2262%22%20r%3D%2211%22%20fill%3D%22url%28%23logo-knob-glow%29%22/%3E%0A%20%20%3Ccircle%20cx%3D%22206%22%20cy%3D%2257%22%20r%3D%223.2%22%20fill%3D%22%23ffffff%22%20opacity%3D%220.85%22/%3E%0A%20%20%3Cpath%20d%3D%22M%20326%20112%20C%20352%20110%20382%20130%20380%20162%20C%20378%20188%20355%20204%20330%20205%22%20fill%3D%22none%22%20stroke%3D%22%23ffaa90%22%20stroke-width%3D%222.8%22%20stroke-linecap%3D%22round%22%20opacity%3D%220.4%22/%3E%0A%0A%20%20%3C%21--%20%D0%9A%D0%B0%D0%B2%D0%B0%D0%B9%D0%BD%D1%8B%D0%B5%20%D0%B0%D0%BD%D0%B8%D0%BC%D0%B5-%D0%B3%D0%BB%D0%B0%D0%B7%D0%BA%D0%B8%20%D1%81%20%D1%8F%D1%80%D0%BA%D0%B8%D0%BC%D0%B8%20%D0%B1%D0%BB%D0%B8%D0%BA%D0%B0%D0%BC%D0%B8%20--%3E%0A%20%20%3Ccircle%20cx%3D%22186%22%20cy%3D%22164%22%20r%3D%228.5%22%20fill%3D%22%232b0c15%22/%3E%0A%20%20%3Ccircle%20cx%3D%22183.5%22%20cy%3D%22161.5%22%20r%3D%223.2%22%20fill%3D%22%23ffffff%22/%3E%0A%20%20%3Ccircle%20cx%3D%22187.5%22%20cy%3D%22165.5%22%20r%3D%221.4%22%20fill%3D%22%23ffffff%22/%3E%0A%0A%20%20%3Ccircle%20cx%3D%22234%22%20cy%3D%22164%22%20r%3D%228.5%22%20fill%3D%22%232b0c15%22/%3E%0A%20%20%3Ccircle%20cx%3D%22231.5%22%20cy%3D%22161.5%22%20r%3D%223.2%22%20fill%3D%22%23ffffff%22/%3E%0A%20%20%3Ccircle%20cx%3D%22235.5%22%20cy%3D%22165.5%22%20r%3D%221.4%22%20fill%3D%22%23ffffff%22/%3E%0A%0A%20%20%3C%21--%20%D0%9D%D0%B5%D0%B6%D0%BD%D1%8B%D0%B9%20%D1%80%D0%BE%D0%B7%D0%BE%D0%B2%D1%8B%D0%B9%20%D1%80%D1%83%D0%BC%D1%8F%D0%BD%D0%B5%D1%86%20%D0%BD%D0%B0%20%D1%89%D0%B5%D1%87%D0%BA%D0%B0%D1%85%20--%3E%0A%20%20%3Cellipse%20cx%3D%22170%22%20cy%3D%22172%22%20rx%3D%228.5%22%20ry%3D%225%22%20fill%3D%22%23f43f5e%22%20opacity%3D%220.5%22/%3E%0A%20%20%3Cellipse%20cx%3D%22250%22%20cy%3D%22172%22%20rx%3D%228.5%22%20ry%3D%225%22%20fill%3D%22%23f43f5e%22%20opacity%3D%220.5%22/%3E%0A%0A%20%20%3C%21--%20%D0%A3%D0%BB%D1%8B%D0%B1%D0%B0%D1%8E%D1%89%D0%B8%D0%B9%D1%81%D1%8F%20%D1%80%D0%BE%D1%82%D0%B8%D0%BA%20--%3E%0A%20%20%3Cpath%20d%3D%22M%20204%20170%20Q%20210%20176%20216%20170%22%20fill%3D%22none%22%20stroke%3D%22%232b0c15%22%20stroke-width%3D%222.8%22%20stroke-linecap%3D%22round%22/%3E%0A%0A%20%20%3C%21--%20%D0%97%D0%BE%D0%BB%D0%BE%D1%82%D0%B0%D1%8F%20%D0%BF%D0%B5%D1%87%D0%B0%D1%82%D1%8C%20%D1%83%D0%B4%D0%B0%D1%87%D0%B8%20%E5%90%89%20%D0%BD%D0%B0%20%D0%B6%D0%B8%D0%B2%D0%BE%D1%82%D0%B8%D0%BA%D0%B5%20--%3E%0A%20%20%3Cg%20transform%3D%22translate%28201%2C%20192%29%22%3E%0A%20%20%20%20%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%2218%22%20height%3D%2218%22%20rx%3D%224%22%20fill%3D%22%23f59e0b%22%20stroke%3D%22%2378350f%22%20stroke-width%3D%221.5%22/%3E%0A%20%20%20%20%3Ctext%20x%3D%229%22%20y%3D%2214%22%20font-family%3D%22%27Plus%20Jakarta%20Sans%27%2C%20sans-serif%22%20font-size%3D%2212%22%20font-weight%3D%22900%22%20fill%3D%22%2378350f%22%20text-anchor%3D%22middle%22%3E%E5%90%89%3C/text%3E%0A%20%20%3C/g%3E%0A%3C/svg%3E">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="shortcut icon" href="favicon.ico">
+
+  <!-- Open Graph / VK / Telegram -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://chainikcheck.ru/">
+  <meta property="og:title" content="ChainikCheck - Калькулятор и проверка поставок из Китая">
+  <meta property="og:description" content="Точный расчет CBM, плотности груза, ставок карго, таможенных платежей и экосбора РОП без скрытых наценок логистов.">
+  <meta property="og:site_name" content="ChainikCheck">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ChainikCheck - Калькулятор поставок из Китая">
+  <meta name="twitter:description" content="Онлайн-расчет CBM, плотности груза, таможенных пошлин и себестоимости единицы товара для импортеров.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Микроразметка Schema.org (WebApplication + FAQPage) для Google, Яндекс и AI-поисковиков -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://chainikcheck.ru/#app",
+        "name": "ChainikCheck",
+        "alternateName": "ЧайникЧек",
+        "url": "https://chainikcheck.ru/",
+        "description": "Независимый онлайн-калькулятор и аудит поставок из Китая: расчет CBM коробок, плотности груза карго, таможенных пошлин ЕТТ ЕАЭС, НДС 20% и экосбора РОП.",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "All",
+        "inLanguage": "ru",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "RUB"
+        },
+        "featureList": [
+          "Расчет объема коробок в CBM",
+          "Расчет плотности груза карго",
+          "Калькулятор таможенных пошлин и НДС 20%",
+          "Матрица зон ответственности Инкотермс-2020",
+          "Валидатор инвойса и пакинг-листа",
+          "Калькулятор экосбора РОП на упаковку"
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://chainikcheck.ru/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Как рассчитать объем CBM для партии из Китая?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Объем CBM (Cubic Meter) рассчитывается по формуле: Длина (м) * Ширина (м) * Высота (м) * Количество коробок. Например, для 30 коробок размером 60x40x40 см объем одного места составляет 0.6 * 0.4 * 0.4 = 0.096 м3, а общий объем партии равен 2.88 CBM. На складах карго в Китае замеры снимаются по выступающим частям скотча и картона, поэтому реальный объем может быть на 5-10% больше расчетного."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Что такое плотность груза карго и как она влияет на ставку доставки?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Плотность карго вычисляется делением общего физического веса партии в килограммах на суммарный объем в CBM: Вес (кг) / Объем (м3). Если плотность превышает 300 кг/м3 (тяжелый плотный груз), перевозчик дает минимальную ставку за кг. При плотности 150-300 кг/м3 действует стандартный тариф. При плотности менее 150 кг/м3 начисляется надбавка за объем, а при плотности ниже 100 кг/м3 груз считается кубатурным и тарифицируется за кубический метр ($240-280 за 1 м3)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Как рассчитывается таможенная пошлина и НДС 20% при ввозе товаров из Китая?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Таможенные платежи начисляются последовательно на базе таможенной стоимости (стоимость товара по инвойсу плюс транспортировка до границы РФ). Сначала вычисляется сумма ввозной таможенной пошлины: Таможенная стоимость * Ставка по коду ТН ВЭД ЕАЭС (обычно от 0% до 15%). Затем формируется налоговая база НДС: Таможенная стоимость + Сумма пошлины. На эту базу начисляется НДС по ставке 20% (или 10% для детских товаров). Дополнительно уплачивается фиксированный сбор за таможенное оформление по шкале Постановления Правительства РФ № 342."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "От чего зависит ставка таможенного сбора по Постановлению Правительства РФ № 342?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ставка сбора за совершение таможенных операций при электронном декларировании зависит от общей таможенной стоимости партии в рублях: до 200 000 руб - 1 069 руб; от 200 000 до 450 000 руб - 2 138 руб; от 450 000 до 1 200 000 руб - 4 276 руб; от 1 200 000 до 2 500 000 руб - 11 759 руб; от 2 500 000 до 5 000 000 руб - 17 104 руб; от 5 000 000 до 7 000 000 руб - 21 380 руб; свыше 7 000 000 руб - 30 000 руб."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Какие товары из Китая требуют маркировки Честный Знак и нотификации ФСБ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Обязательной маркировке двухмерными кодами DataMatrix в системе Честный Знак подлежат 100% обуви (группа 64), одежда и текстиль (группы 61, 62, 63), духи, шины и БАДы. Маркировка наносится до подачи декларации на таможню. Нотификация ФСБ России требуется для всех электронных устройств с беспроводными модулями (Bluetooth, Wi-Fi, GSM, RFID), использующих шифрование (беспроводные наушники, умные часы, роутеры)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Кто обязан платить экологический сбор РОП на упаковку импорта в 2026 году?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "В соответствии с Федеральным законом № 89-ФЗ «Об отходах производства и потребления» и реформой РОП, обязанность по утилизации и уплате экосбора за упаковку ввезенных товаров возложена на юридические лица и ИП, являющихся импортерами. Масса упаковки (гофрокартон, стретч-пленка, паллеты) определяется как разница между весом брутто и нетто по декларациям (ДТ). Ежегодная отчетность и уплата сбора в Росприроднадзор производятся до 15 апреля года, следующего за отчетным."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg-warm: #faf8f5;
+      --bg-card: #ffffff;
+      --text-hero: #2b0c15;
+      --text-body: #4a4443;
+      --text-muted: #78716c;
+      --brand-orange: #ea580c;
+      --brand-orange-grad: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);
+      --brand-orange-hover: #c2410c;
+      --brand-orange-light: #fff7ed;
+      --brand-green: #10b981;
+      --brand-green-light: #f0fdf4;
+      --brand-blue: #0284c7;
+      --brand-blue-light: #f0f9ff;
+      --border-card: rgba(43, 12, 21, 0.08);
+      --border-focus: #ea580c;
+      --shadow-sm: 0 2px 8px rgba(43, 12, 21, 0.04);
+      --shadow-md: 0 8px 30px -4px rgba(43, 12, 21, 0.07), 0 2px 6px -1px rgba(43, 12, 21, 0.03);
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --radius-sm: 8px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-warm);
+      color: var(--text-body);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Верхняя строка объявлений */
+    .top-announcement {
+      background: #2b0c15;
+      color: #faf8f5;
+      text-align: center;
+      font-size: 13px;
+      font-weight: 500;
+      padding: 8px 16px;
+      letter-spacing: 0.02em;
+    }
+    .top-announcement a {
+      color: #fdba74;
+      text-decoration: underline;
+      font-weight: 600;
+      margin-left: 6px;
+    }
+
+    /* Шапка сайта */
+    .header {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 22px 20px 14px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    /* Чистый векторный значок чайника БЕЗ темного фона и коробки */
+    .logo-icon {
+      width: 44px;
+      height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: transform 0.2s ease;
+    }
+    .logo:hover .logo-icon {
+      transform: translateY(-2px) scale(1.05);
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+    }
+    .logo-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 23px;
+      font-weight: 900;
+      color: var(--text-hero);
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+    }
+    .logo-title span {
+      color: var(--brand-orange);
+    }
+    .logo-subtitle {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .header-links {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .badge-kwork {
+      background: #ffffff;
+      border: 1.5px solid var(--border-card);
+      height: 40px;
+      padding: 0 16px;
+      border-radius: 9999px;
+      font-size: 13px;
+      font-weight: 700;
+      color: #1e293b;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      box-shadow: var(--shadow-sm);
+      white-space: nowrap;
+    }
+    .badge-kwork .dot {
+      width: 8px;
+      height: 8px;
+      background: var(--brand-green);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .btn-cta-top {
+      background: var(--brand-orange);
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 13px;
+      height: 40px;
+      padding: 0 20px;
+      border-radius: 9999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.15s ease, transform 0.1s ease;
+      box-shadow: 0 2px 10px rgba(234, 88, 12, 0.25);
+      white-space: nowrap;
+    }
+    .btn-cta-top:hover {
+      background: var(--brand-orange-hover);
+      transform: translateY(-1px);
+    }
+
+    /* Главный персонаж (Hero SVG) */
+    .hero-character-wrapper {
+      margin: 8px auto 16px auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+    .teapot-hero-art {
+      max-width: 320px;
+      height: auto;
+      filter: drop-shadow(0 14px 28px rgba(43, 12, 21, 0.08));
+    }
+    .teapot-body-anim {
+      transform-origin: 180px 200px;
+      animation: teapotBreathe 4s ease-in-out infinite;
+    }
+    .float-slow-left {
+      animation: floatLeft 5s ease-in-out infinite;
+      transform-origin: 75px 220px;
+    }
+    .float-slow-right {
+      animation: floatRight 4.5s ease-in-out infinite 0.5s;
+      transform-origin: 430px 220px;
+    }
+    .steam-puff {
+      animation: steamFlow 3s ease-in-out infinite;
+    }
+    .puff-2 {
+      animation-delay: 1.5s;
+    }
+    .steam-tag {
+      animation: tagFloat 3.5s ease-in-out infinite;
+    }
+    .tag-2 {
+      animation-delay: 1.8s;
+    }
+
+    @keyframes teapotBreathe {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-4px) scale(1.015); }
+    }
+    @keyframes floatLeft {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-6px) rotate(-2deg); }
+    }
+    @keyframes floatRight {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-5px) rotate(3deg); }
+    }
+    @keyframes steamFlow {
+      0%, 100% { opacity: 0.35; transform: translateY(0); }
+      50% { opacity: 0.85; transform: translateY(-7px); }
+    }
+    @keyframes tagFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    /* Главный баннер (Hero) */
+    .hero {
+      max-width: 1200px;
+      margin: 4px auto 28px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #ffffff;
+      border: 1px solid var(--border-card);
+      padding: 6px 18px;
+      border-radius: 9999px;
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--brand-orange);
+      margin-bottom: 14px;
+      box-shadow: var(--shadow-sm);
+    }
+    .hero h1 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 44px;
+      font-weight: 900;
+      color: var(--text-hero);
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      margin-bottom: 12px;
+    }
+    .hero h1 span {
+      color: var(--brand-orange);
+    }
+    .hero p {
+      font-size: 16.5px;
+      color: var(--text-muted);
+      max-width: 780px;
+      margin: 0 auto;
+      line-height: 1.55;
+    }
+
+    /* Переключатель вкладок (Tabs) */
+    .tabs-wrapper {
+      max-width: 1200px;
+      margin: 0 auto 26px auto;
+      padding: 0 20px;
+    }
+    .tabs-nav {
+      display: flex;
+      gap: 8px;
+      background: #ffffff;
+      padding: 6px;
+      border-radius: 18px;
+      border: 1px solid var(--border-card);
+      box-shadow: var(--shadow-sm);
+      overflow-x: auto;
+    }
+    .tab-btn {
+      flex: 1;
+      min-width: 180px;
+      padding: 12px 14px;
+      border: none;
+      background: transparent;
+      border-radius: 12px;
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--text-muted);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .tab-btn:hover {
+      color: var(--text-hero);
+      background: rgba(234, 88, 12, 0.05);
+    }
+    .tab-btn.active {
+      background: var(--brand-orange);
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(234, 88, 12, 0.25);
+    }
+
+    /* Контейнер инструментов */
+    .tab-content {
+      display: none;
+      max-width: 1200px;
+      margin: 0 auto 46px auto;
+      padding: 0 20px;
+    }
+    .tab-content.active {
+      display: block;
+      animation: fadeIn 0.22s ease-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Сетка калькулятора */
+    .tool-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    /* Карточки инструментов */
+    .card {
+      background: var(--bg-card);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-card);
+      padding: 26px;
+      box-shadow: var(--shadow-md);
+    }
+
+    /* Пошаговая визуальная иерархия */
+    .step-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1.5px solid #f5f5f4;
+    }
+    .step-num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--brand-orange);
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: 800;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .step-num.green {
+      background: var(--brand-green);
+    }
+    .step-num.blue {
+      background: var(--brand-blue);
+    }
+    .step-title-wrap {
+      flex: 1;
+    }
+    .step-badge-tag {
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand-orange);
+      margin-bottom: 2px;
+    }
+    .step-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--text-hero);
+      line-height: 1.25;
+    }
+    .step-desc {
+      font-size: 12.5px;
+      color: var(--text-muted);
+      margin-top: 3px;
+    }
+
+    /* Поля формы */
+    .form-group {
+      margin-bottom: 16px;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .form-row-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    label {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-hero);
+      margin-bottom: 5px;
+    }
+    label span {
+      font-weight: 400;
+      color: var(--text-muted);
+    }
+    input[type="number"], select, input[type="text"] {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1.5px solid #e7e5e4;
+      border-radius: 10px;
+      font-size: 13.5px;
+      font-family: inherit;
+      color: var(--text-hero);
+      background: #fafaf9;
+      transition: all 0.15s ease;
+    }
+    input[type="number"]:focus, select:focus, input[type="text"]:focus {
+      outline: none;
+      border-color: var(--border-focus);
+      background: #ffffff;
+      box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.12);
+    }
+
+    /* Экспресс-полоса метрик одного места */
+    .step-summary-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 10px 12px;
+      margin-top: 6px;
+    }
+    .summary-chip {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+    .summary-chip strong {
+      color: var(--text-hero);
+      font-weight: 700;
+      margin-left: 3px;
+    }
+    .summary-chip.highlight strong {
+      color: var(--brand-orange);
+      font-weight: 800;
+    }
+
+    /* Интерактивный селектор тарифа (Шаг 2) */
+    .tariff-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .tariff-option {
+      background: #fafaf9;
+      border: 2px solid #e7e5e4;
+      border-radius: 12px;
+      padding: 12px 14px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      position: relative;
+    }
+    .tariff-option:hover {
+      border-color: #fdba74;
+      background: #ffffff;
+    }
+    .tariff-option.active {
+      border-color: var(--brand-orange);
+      background: var(--brand-orange-light);
+      box-shadow: 0 4px 12px rgba(234, 88, 12, 0.12);
+    }
+    .tariff-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 4px;
+    }
+    .tariff-name {
+      font-size: 13.5px;
+      font-weight: 800;
+      color: var(--text-hero);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .tariff-badge {
+      font-size: 10.5px;
+      font-weight: 800;
+      padding: 2px 7px;
+      border-radius: 9999px;
+      background: #e2e8f0;
+      color: #475569;
+    }
+    .tariff-badge.popular {
+      background: #fef3c7;
+      color: #92400e;
+    }
+    .tariff-days {
+      font-size: 11.5px;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+    .tariff-rate {
+      font-size: 14px;
+      font-weight: 900;
+      color: var(--brand-orange);
+    }
+
+    /* Блок результатов (Шаг 3) */
+    .results-card {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      border: 1.5px solid var(--border-card);
+      padding: 26px;
+      box-shadow: var(--shadow-md);
+      margin-bottom: 20px;
+    }
+    .status-badge {
+      font-size: 11.5px;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 9999px;
+      background: var(--brand-green-light);
+      color: var(--brand-green);
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      white-space: nowrap;
+    }
+
+    /* Главные большие метрики результата */
+    .hero-metric-box {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    .hero-metric-item {
+      background: var(--brand-orange-light);
+      border: 1.5px solid #fed7aa;
+      border-radius: 12px;
+      padding: 14px;
+    }
+    .hero-metric-item.secondary {
+      background: #f8fafc;
+      border-color: #e2e8f0;
+    }
+    .hero-metric-label {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: #9a3412;
+      margin-bottom: 4px;
+    }
+    .hero-metric-item.secondary .hero-metric-label {
+      color: #475569;
+    }
+    .hero-metric-value {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--brand-orange);
+      line-height: 1.1;
+    }
+    .hero-metric-item.secondary .hero-metric-value {
+      color: var(--text-hero);
+    }
+    .hero-metric-sub {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    /* Детализация расчета */
+    .metrics-list {
+      margin-bottom: 18px;
+    }
+    .metric-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      font-size: 13px;
+      border-bottom: 1px dashed #f5f5f4;
+    }
+    .metric-name {
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .metric-value {
+      font-weight: 800;
+      color: var(--text-hero);
+    }
+    .metric-value.highlight {
+      color: var(--brand-orange);
+      font-size: 14.5px;
+    }
+
+    /* Совет по экономии на плотности */
+    .density-insight-box {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 12px;
+      padding: 12px 14px;
+      font-size: 12px;
+      color: #1e40af;
+      line-height: 1.45;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      margin-bottom: 16px;
+    }
+    .density-insight-box .insight-icon {
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    /* Кнопка копирования расчета */
+    .btn-copy-calc {
+      width: 100%;
+      background: #fafaf9;
+      border: 1.5px solid #e7e5e4;
+      border-radius: 10px;
+      padding: 10px 14px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-hero);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all 0.15s ease;
+    }
+    .btn-copy-calc:hover {
+      background: #ffffff;
+      border-color: var(--brand-orange);
+      color: var(--brand-orange);
+    }
+
+    /* Карточки экспертного аудита на Kwork (Полноширинный сбалансированный баннер) */
+    .kwork-offer-card {
+      grid-column: 1 / -1;
+      background: #2b0c15;
+      color: #ffffff;
+      border-radius: var(--radius-lg);
+      padding: 28px 32px;
+      box-shadow: 0 12px 36px rgba(43, 12, 21, 0.2);
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1.55fr 1fr;
+      gap: 32px;
+      align-items: center;
+      margin-top: 10px;
+      box-sizing: border-box;
+    }
+    .kwork-offer-card::before {
+      content: "";
+      position: absolute;
+      top: -60px;
+      right: -60px;
+      width: 220px;
+      height: 220px;
+      background: radial-gradient(circle, rgba(234, 88, 12, 0.35) 0%, rgba(43, 12, 21, 0) 70%);
+      pointer-events: none;
+    }
+    .kwork-left {
+      position: relative;
+      z-index: 1;
+    }
+    .kwork-right {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 20px;
+      text-align: center;
+    }
+    .kwork-pill-price {
+      display: inline-block;
+      background: var(--brand-orange);
+      color: #ffffff;
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 9999px;
+      letter-spacing: 0.05em;
+      margin-bottom: 10px;
+    }
+    .kwork-offer-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 17px;
+      font-weight: 800;
+      line-height: 1.35;
+      margin-bottom: 12px;
+      color: #ffffff;
+    }
+    .kwork-offer-features {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 16px;
+      margin-bottom: 0;
+    }
+    .kwork-offer-features li {
+      font-size: 12px;
+      color: #e7e5e4;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      line-height: 1.4;
+    }
+    .kwork-offer-features li span {
+      color: #34d399;
+      font-weight: 900;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .btn-kwork-order {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      text-align: center;
+      background: #ffffff;
+      color: #2b0c15;
+      font-weight: 800;
+      font-size: 13.5px;
+      padding: 14px 18px;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: all 0.15s ease;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+      line-height: 1.35;
+      box-sizing: border-box;
+    }
+    .btn-kwork-order:hover {
+      background: var(--brand-orange);
+      color: #ffffff;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(234, 88, 12, 0.4);
+    }
+    .kwork-trust-line {
+      font-size: 11.5px;
+      color: #cbd5e1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+    .disclaimer-box {
+      font-size: 11px;
+      color: #a8a29e;
+      line-height: 1.4;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 10px;
+      margin-top: 2px;
+    }
+
+    /* Инкотермс и Валютный контроль визуализация */
+    .incoterms-matrix {
+      background: #fafaf9;
+      border: 1px solid #e7e5e4;
+      border-radius: 14px;
+      padding: 16px;
+      margin-bottom: 16px;
+    }
+    .matrix-step {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 9px 12px;
+      margin-bottom: 6px;
+      border-radius: 8px;
+      font-size: 12.5px;
+      font-weight: 600;
+      background: #ffffff;
+      border: 1px solid #f0eeeb;
+      transition: all 0.15s ease;
+    }
+    .matrix-step.seller {
+      border-left: 4px solid var(--brand-orange);
+    }
+    .matrix-step.buyer {
+      border-left: 4px solid var(--brand-blue);
+    }
+    .matrix-step.risk-shift {
+      border-left: 4px solid var(--brand-green);
+      background: #f0fdf4;
+    }
+    .badge-party {
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+    .badge-seller {
+      background: var(--brand-orange-light);
+      color: #c2410c;
+    }
+    .badge-buyer {
+      background: var(--brand-blue-light);
+      color: #0369a1;
+    }
+    .badge-shift {
+      background: #dcfce7;
+      color: #15803d;
+    }
+    .badge-risk-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 11.5px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .badge-risk-pill.green {
+      background: #dcfce7;
+      color: #166534;
+      border: 1px solid #bbf7d0;
+    }
+    .badge-risk-pill.orange {
+      background: #ffedd5;
+      color: #9a3412;
+      border: 1px solid #fed7aa;
+    }
+    .badge-risk-pill.red {
+      background: #fee2e2;
+      color: #991b1b;
+      border: 1px solid #fecaca;
+    }
+    .badge-risk-pill.yellow {
+      background: #fef9c3;
+      color: #854d0e;
+      border: 1px solid #fef08a;
+    }
+    .clause-copy-box {
+      background: #1c1917;
+      color: #f5f5f4;
+      border-radius: 10px;
+      padding: 12px 14px;
+      margin-top: 12px;
+      font-family: monospace;
+      font-size: 12px;
+      line-height: 1.5;
+      position: relative;
+    }
+    .clause-copy-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+      font-size: 11px;
+      font-family: 'Inter', sans-serif;
+      color: #a8a29e;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .btn-clause-copy {
+      background: #292524;
+      border: 1px solid #44403c;
+      color: #fb923c;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .btn-clause-copy:hover {
+      background: #44403c;
+      color: #ffffff;
+    }
+    .trap-accordion {
+      margin-top: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .trap-item {
+      background: #fafaf9;
+      border: 1px solid #e7e5e4;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: all 0.15s ease;
+    }
+    .trap-item:hover {
+      border-color: #d6d3d1;
+    }
+    .trap-summary {
+      padding: 10px 14px;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-hero);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      user-select: none;
+    }
+    .trap-summary::-webkit-details-marker {
+      display: none;
+    }
+    .trap-content {
+      padding: 10px 14px 12px 14px;
+      background: #ffffff;
+      border-top: 1px solid #f5f5f4;
+      font-size: 12px;
+      color: #44403c;
+      line-height: 1.55;
+    }
+    .trap-danger-note {
+      color: #dc2626;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .trap-solution-note {
+      color: #15803d;
+      font-weight: 700;
+      margin-top: 6px;
+    }
+
+    /* Чеклист валидатора документов */
+    .validator-checklist {
+      list-style: none;
+      margin-top: 14px;
+    }
+    .validator-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 12px;
+      border-radius: 8px;
+      margin-bottom: 6px;
+      font-size: 12.5px;
+      background: #f8fafc;
+      border: 1px solid #f1f5f9;
+    }
+    .validator-item.ok {
+      border-left: 3px solid var(--brand-green);
+    }
+    .validator-item.warn {
+      border-left: 3px solid #f59e0b;
+    }
+
+    /* Стили маркировки Shipping Marks и чек-листа инвойса */
+    .shipping-mark-box {
+      background: #0f172a;
+      color: #f8fafc;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 11px;
+      line-height: 1.45;
+      padding: 10px 12px;
+      border-radius: 8px;
+      margin-top: 8px;
+      white-space: pre;
+      overflow-x: auto;
+      border: 1px solid #334155;
+    }
+    .checklist-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .checklist-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 12px;
+      color: #334155;
+      background: #f8fafc;
+      padding: 8px 10px;
+      border-radius: 6px;
+      border: 1px solid #e2e8f0;
+      cursor: pointer;
+    }
+    .checklist-row input {
+      margin-top: 2px;
+      cursor: pointer;
+    }
+
+    /* Справочник импортера (SEO & GEO блок) */
+    .seo-knowledge-section {
+      max-width: 1200px;
+      margin: 40px auto 0 auto;
+      padding: 0 20px;
+    }
+    .seo-knowledge-header {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+    .seo-knowledge-header h2 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 26px;
+      font-weight: 900;
+      color: var(--text-hero);
+      margin-bottom: 8px;
+    }
+    .seo-knowledge-header p {
+      font-size: 14px;
+      color: var(--text-muted);
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .faq-card {
+      background: #ffffff;
+      border: 1px solid var(--border-card);
+      border-radius: 16px;
+      padding: 22px;
+      box-shadow: var(--shadow-sm);
+    }
+    .faq-card h3 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--text-hero);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .faq-card p {
+      font-size: 13px;
+      color: #4a4443;
+      line-height: 1.55;
+      margin-bottom: 10px;
+    }
+    .faq-formula-box {
+      background: #f8fafc;
+      border-left: 3px solid var(--brand-orange);
+      padding: 8px 12px;
+      border-radius: 0 8px 8px 0;
+      font-family: monospace;
+      font-size: 12px;
+      color: #0f172a;
+      font-weight: 700;
+      margin: 8px 0;
+    }
+
+    /* ========================================================= */
+    /* ПОЛНОЦЕННЫЙ МНОГОКОЛОНОЧНЫЙ ЮРИДИЧЕСКИЙ ПОДВАЛ (FOOTER)   */
+    /* ========================================================= */
+    .footer {
+      border-top: 1.5px solid var(--border-card);
+      background: #ffffff;
+      padding: 50px 20px 30px 20px;
+      margin-top: 60px;
+    }
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .footer-columns {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1.2fr 1fr;
+      gap: 32px;
+      margin-bottom: 40px;
+    }
+    .footer-col-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 14.5px;
+      font-weight: 800;
+      color: var(--text-hero);
+      margin-bottom: 14px;
+      letter-spacing: -0.01em;
+    }
+    .footer-about-text {
+      font-size: 12.5px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 14px;
+    }
+    .footer-legal-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      color: #166534;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+    .footer-nav-list {
+      list-style: none;
+    }
+    .footer-nav-list li {
+      margin-bottom: 8px;
+    }
+    .footer-nav-list a, .footer-nav-list button {
+      font-size: 12.5px;
+      color: var(--text-muted);
+      text-decoration: none;
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      text-align: left;
+      font-family: inherit;
+      transition: color 0.15s ease;
+    }
+    .footer-nav-list a:hover, .footer-nav-list button:hover {
+      color: var(--brand-orange);
+    }
+    .footer-legal-notice {
+      background: #fafaf9;
+      border: 1px solid #e7e5e4;
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-bottom: 24px;
+      font-size: 11.5px;
+      color: #57534e;
+      line-height: 1.55;
+    }
+    .footer-bottom-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      padding-top: 20px;
+      border-top: 1px solid #f5f5f4;
+    }
+    .footer-copyright {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+    .footer-meta-badges {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .footer-meta-badges span {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-hero);
+      background: var(--bg-warm);
+      padding: 4px 8px;
+      border-radius: 6px;
+      border: 1px solid rgba(43, 12, 21, 0.05);
+    }
+
+    /* ========================================================= */
+    /* ЮРИДИЧЕСКИЕ МОДАЛЬНЫЕ ОКНА (152-ФЗ, ОФЕРТА, ДИСКЛЕЙМЕР)   */
+    /* ========================================================= */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(43, 12, 21, 0.6);
+      backdrop-filter: blur(4px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10000;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.25s ease;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .modal-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    .modal-container {
+      background: #ffffff;
+      border-radius: 20px;
+      width: 100%;
+      max-width: 760px;
+      max-height: 85vh;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 20px 50px rgba(43, 12, 21, 0.3);
+      transform: scale(0.95);
+      transition: transform 0.25s ease;
+      overflow: hidden;
+    }
+    .modal-overlay.active .modal-container {
+      transform: scale(1);
+    }
+    .modal-header {
+      padding: 20px 24px;
+      border-bottom: 1.5px solid #f5f5f4;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #fafaf9;
+    }
+    .modal-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--text-hero);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .modal-close-btn {
+      background: transparent;
+      border: none;
+      font-size: 24px;
+      color: var(--text-muted);
+      cursor: pointer;
+      line-height: 1;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+    .modal-close-btn:hover {
+      background: #f5f5f4;
+      color: var(--text-hero);
+    }
+    .modal-body {
+      padding: 24px;
+      overflow-y: auto;
+      font-size: 13px;
+      color: var(--text-body);
+      line-height: 1.6;
+    }
+    .modal-body h4 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--text-hero);
+      margin: 16px 0 8px 0;
+    }
+    .modal-body h4:first-child {
+      margin-top: 0;
+    }
+    .modal-body p {
+      margin-bottom: 10px;
+    }
+    .modal-body ul {
+      margin: 8px 0 12px 20px;
+    }
+    .modal-body li {
+      margin-bottom: 4px;
+    }
+    .modal-footer {
+      padding: 16px 24px;
+      border-top: 1px solid #f5f5f4;
+      background: #fafaf9;
+      display: flex;
+      justify-content: flex-end;
+    }
+    .modal-btn-close {
+      background: #2b0c15;
+      color: #ffffff;
+      border: none;
+      padding: 9px 18px;
+      border-radius: 10px;
+      font-size: 12.5px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.15s ease;
+    }
+    .modal-btn-close:hover {
+      background: var(--brand-orange);
+    }
+
+    /* Cookie Consent Banner */
+    .cookie-banner {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      max-width: 420px;
+      background: #ffffff;
+      border: 1.5px solid var(--border-card);
+      border-radius: 16px;
+      padding: 16px 18px;
+      box-shadow: 0 10px 30px rgba(43, 12, 21, 0.15);
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transform: translateY(120%);
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .cookie-banner.visible {
+      transform: translateY(0);
+    }
+    .cookie-text {
+      font-size: 12px;
+      color: var(--text-body);
+      line-height: 1.45;
+    }
+    .cookie-text a {
+      color: var(--brand-orange);
+      text-decoration: underline;
+      font-weight: 600;
+    }
+    .cookie-actions {
+      display: flex;
+      gap: 8px;
+      justify-content: flex-end;
+    }
+    .btn-cookie-accept {
+      background: var(--brand-orange);
+      color: #ffffff;
+      border: none;
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    /* Toast уведомление о копировании */
+    .toast-copy {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #2b0c15;
+      color: #ffffff;
+      padding: 12px 20px;
+      border-radius: 12px;
+      font-size: 13px;
+      font-weight: 700;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      z-index: 9999;
+      opacity: 0;
+      transform: translateY(10px);
+      pointer-events: none;
+      transition: all 0.25s ease;
+    }
+    .toast-copy.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 900px) {
+      .tool-grid {
+        grid-template-columns: 1fr;
+      }
+      .faq-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-columns {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .kwork-offer-card {
+        grid-template-columns: 1fr;
+        padding: 22px 18px;
+        gap: 20px;
+      }
+      .kwork-offer-features {
+        grid-template-columns: 1fr;
+      }
+      .hero h1 {
+        font-size: 32px;
+      }
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+      .form-row-2 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .top-announcement {
+        padding: 5px 10px;
+        font-size: 11px;
+      }
+      .header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        padding: 10px 16px;
+      }
+      .logo-title {
+        font-size: 21px;
+      }
+      .header-links {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        width: 100%;
+      }
+      .badge-kwork, .btn-cta-top {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+        font-size: 12px;
+        padding: 0 6px;
+        height: 36px;
+      }
+      .hero {
+        margin: 2px auto 10px auto;
+        padding: 0 14px;
+      }
+      .teapot-hero-art {
+        max-width: 220px;
+      }
+      .hero-character-wrapper {
+        margin: 2px auto 6px auto;
+      }
+      .hero-pill {
+        margin-bottom: 8px;
+        padding: 4px 12px;
+        font-size: 11px;
+      }
+      .hero h1 {
+        font-size: 22px;
+        line-height: 1.2;
+        margin-bottom: 6px;
+      }
+      .hero p {
+        font-size: 13px;
+        line-height: 1.4;
+      }
+      .card, .results-card {
+        padding: 18px 14px;
+      }
+      .tabs-wrapper {
+        padding: 0 12px;
+        margin-bottom: 14px;
+      }
+      .tabs-nav {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 6px;
+        padding: 6px;
+        border-radius: 14px;
+      }
+      .tab-btn {
+        min-width: 0;
+        width: 100%;
+        padding: 9px 4px;
+        font-size: 11.5px;
+        font-weight: 700;
+        border-radius: 9px;
+        white-space: normal;
+        text-align: center;
+        justify-content: center;
+        gap: 5px;
+        line-height: 1.2;
+      }
+      .tab-btn:nth-child(5) {
+        grid-column: span 2;
+      }
+      .tariff-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-metric-box {
+        grid-template-columns: 1fr;
+      }
+      .footer-columns {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .cookie-banner {
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        max-width: none;
+      }
+    }
+
+    /* Живой информер курсов валют ЦБ РФ */
+    .live-rates-bar {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 12px 18px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      box-shadow: var(--shadow-sm);
+    }
+    .rates-status {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--brand-burgundy);
+    }
+    .live-dot {
+      width: 9px;
+      height: 9px;
+      background: #10b981;
+      border-radius: 50%;
+      display: inline-block;
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+      animation: pulseDot 2s infinite ease-in-out;
+    }
+    @keyframes pulseDot {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.15); opacity: 0.75; }
+    }
+    .rates-values {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      font-size: 13px;
+    }
+    .rate-tag {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      padding: 4px 10px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .rate-tag .rate-currency {
+      color: #64748b;
+      font-weight: 600;
+      font-size: 12px;
+    }
+    .rate-tag strong {
+      color: var(--brand-burgundy);
+      font-weight: 800;
+    }
+    .rates-date {
+      font-size: 11.5px;
+      color: #64748b;
+    }
+    .rates-mode-toggle {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      color: #475569;
+    }
+    .rates-mode-toggle select {
+      padding: 5px 10px;
+      border-radius: 8px;
+      border: 1px solid #cbd5e1;
+      background: #ffffff;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--brand-burgundy);
+      cursor: pointer;
+    }
+
+    /* Мультивалютный инпут */
+    .currency-input-group {
+      display: flex;
+      gap: 8px;
+    }
+    .currency-input-group input {
+      flex: 1;
+    }
+    .currency-input-group select {
+      width: 140px;
+      padding: 10px 12px;
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--brand-burgundy);
+      background: #f8fafc;
+      cursor: pointer;
+      box-sizing: border-box;
+    }
+
+    /* Селекторы опций упаковки и страховки */
+    .calc-select {
+      width: 100%;
+      padding: 11px 14px;
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+      font-family: inherit;
+      color: var(--brand-burgundy);
+      background: #ffffff;
+      font-weight: 600;
+      cursor: pointer;
+      box-sizing: border-box;
+      transition: border-color 0.15s ease;
+    }
+    .calc-select:focus {
+      outline: none;
+      border-color: var(--brand-orange);
+    }
+    .calc-checkbox-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-primary);
+      cursor: pointer;
+      margin-top: 10px;
+      user-select: none;
+    }
+    .calc-checkbox-label input[type="checkbox"] {
+      width: 17px;
+      height: 17px;
+      accent-color: var(--brand-orange);
+      cursor: pointer;
+    }
+
+    /* Расширенная сетка ключевых результатов */
+    .hero-metric-grid-4 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .hero-metric-item.highlight-cost {
+      background: #f0fdf4;
+      border-color: rgba(34, 197, 94, 0.3);
+    }
+    .hero-metric-item.highlight-cost .hero-metric-value {
+      color: #15803d;
+    }
+
+  
+    /* === ЧИСТЫЙ ЛЕГКИЙ ДИЗАЙН БЕЗ ПЕРЕГРУЖЕННЫХ КАРТОЧЕК И РАМОК === */
+    .top-announcement {
+      background: #1c080e;
+      color: #faf8f5;
+      font-size: 12px;
+      padding: 6px 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .top-announcement-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .top-rates-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 12px;
+    }
+    .top-rates-title {
+      color: #a8a29e;
+      font-weight: 600;
+    }
+    .top-rate-item {
+      color: #ffffff;
+      font-weight: 500;
+      background: rgba(255, 255, 255, 0.08);
+      padding: 2px 7px;
+      border-radius: 4px;
+    }
+    .top-rate-item strong {
+      color: #4ade80;
+      font-weight: 700;
+    }
+    .top-kwork-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      color: #cbd5e1;
+    }
+    .top-kwork-row a {
+      color: #fdba74;
+      text-decoration: none;
+      font-weight: 700;
+      transition: opacity 0.2s;
+    }
+    .top-kwork-row a:hover {
+      opacity: 0.85;
+      text-decoration: underline;
+    }
+
+    /* Табы со ссылками для перехода между страницами (ТЕКСТ НИКОГДА НЕ ПРОПАДАЕТ) */
+    .tabs-nav a.tab-btn {
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-hero);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .tabs-nav a.tab-btn:hover {
+      color: var(--brand-orange);
+      background: var(--brand-orange-light);
+    }
+    .tabs-nav a.tab-btn.active,
+    .tabs-nav a.tab-btn.active:hover,
+    .tabs-nav a.tab-btn.active:focus {
+      color: #ffffff !important;
+      background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%) !important;
+      box-shadow: 0 4px 14px rgba(234, 88, 12, 0.3) !important;
+      font-weight: 800;
+    }
+
+    /* Облегчение шагов и карточек: ровный заголовок и бейдж справа */
+    .step-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 20px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid #f1f5f9;
+    }
+    .step-header-main {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      flex: 1;
+      min-width: 0;
+    }
+    .step-num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--brand-orange);
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: 800;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .step-num.green { background: var(--brand-green); }
+    .step-num.blue { background: var(--brand-blue); }
+    .step-title-wrap {
+      flex: 1;
+      min-width: 0;
+    }
+    .step-badge-tag {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--brand-orange);
+      margin-bottom: 3px;
+      line-height: 1.3;
+    }
+    .step-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--text-hero);
+      line-height: 1.25;
+      margin: 0;
+    }
+    .step-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+    .status-badge {
+      font-size: 11.5px;
+      font-weight: 800;
+      padding: 5px 12px;
+      border-radius: 9999px;
+      background: var(--brand-green-light);
+      color: var(--brand-green);
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      white-space: nowrap;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    @media (max-width: 640px) {
+      .step-header {
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .status-badge {
+        margin-left: 40px;
+      }
+    }
+
+    /* Селект валюты закупки (не обрезать Доллары USD) */
+    .currency-input-group select {
+      min-width: 165px;
+      padding: 10px 10px;
+    }
+
+    /* Ссылки в футере */
+    .footer-nav-list a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 13px;
+      transition: color 0.2s;
+    }
+    .footer-nav-list a:hover {
+      color: var(--brand-orange);
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Верхняя строка котировок ЦБ РФ онлайн и экспертных решений -->
+  <div class="top-announcement">
+    <div class="top-announcement-inner">
+      <div class="top-rates-row">
+        <span class="live-dot" id="rates-dot"></span>
+        <span class="top-rates-title">ЦБ РФ онлайн:</span>
+        <span class="top-rate-item">USD: <strong id="live-usd-val">84.34 ₽</strong></span>
+        <span class="top-rate-item">CNY: <strong id="live-cny-val">12.54 ₽</strong></span>
+        <span class="top-rate-item">EUR: <strong id="live-eur-val">95.87 ₽</strong></span>
+      </div>
+      <div class="top-kwork-row">
+        <span>Линейка решений ВЭД на Kwork</span>
+        <a href="https://kwork.ru/user/milligat" target="_blank" rel="noopener">Профиль эксперта на Kwork</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Шапка сайта -->
+  <header class="header">
+    <a href="#" class="logo">
+      <!-- Чистый векторный значок чайника Си Ши без квадратного фона -->
+      <div class="logo-icon">
+        <!-- Единый фирменный персонаж-чайник Си Ши с кавайным лицом и печатью 吉 -->
+        <svg width="46" height="34" viewBox="82 46 312 206" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="logo-tp-body" x1="15%" y1="10%" x2="85%" y2="90%">
+      <stop offset="0%" stop-color="#ff7f5c"/>
+      <stop offset="42%" stop-color="#ea580c"/>
+      <stop offset="85%" stop-color="#9a3412"/>
+      <stop offset="100%" stop-color="#6c2207"/>
+    </linearGradient>
+    <radialGradient id="logo-knob-glow" cx="35%" cy="30%" r="65%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.6"/>
+      <stop offset="40%" stop-color="#ff8e70" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#7c2d12" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Тело чайничка Си Ши (точное совпадение с персонажем Hero) -->
+  <path d="M 204.6 51.5 L 201.0 52.8 L 197.8 54.8 L 195.4 57.5 L 194.2 60.7 L 194.5 64.6 L 195.7 68.6 L 196.7 72.3 L 196.8 75.3 L 194.9 76.9 L 191.0 77.5 L 186.7 77.8 L 182.9 78.4 L 179.3 79.2 L 175.7 80.1 L 172.1 81.1 L 168.4 82.1 L 164.7 83.3 L 161.0 84.6 L 157.4 86.0 L 153.9 87.6 L 150.5 89.4 L 147.3 91.3 L 144.2 93.3 L 141.3 95.4 L 138.4 97.6 L 135.5 99.8 L 132.5 102.0 L 129.5 104.2 L 126.4 106.2 L 123.1 107.8 L 119.0 108.2 L 115.0 107.4 L 111.0 106.0 L 107.0 104.2 L 103.0 102.2 L 99.4 105.5 L 95.8 108.9 L 92.1 112.2 L 88.5 115.5 L 89.2 118.0 L 91.1 120.5 L 93.3 122.4 L 95.4 125.6 L 97.3 128.9 L 99.0 132.3 L 100.4 135.8 L 101.6 139.3 L 102.5 143.0 L 103.1 146.7 L 103.5 150.6 L 103.7 154.5 L 103.9 158.4 L 103.9 162.3 L 104.1 166.2 L 104.3 170.1 L 104.7 173.8 L 105.3 177.5 L 106.0 181.1 L 106.8 184.7 L 107.8 188.2 L 108.9 191.6 L 110.3 194.9 L 111.8 198.1 L 113.4 201.3 L 115.2 204.4 L 117.0 207.5 L 119.0 210.6 L 121.1 213.6 L 123.4 216.6 L 125.7 219.5 L 128.1 222.3 L 130.6 225.0 L 133.2 227.6 L 136.0 230.1 L 138.9 232.4 L 141.9 234.5 L 145.1 236.4 L 148.4 238.1 L 151.9 239.5 L 155.5 240.7 L 159.1 241.7 L 162.8 242.6 L 166.5 243.3 L 170.3 244.0 L 174.0 244.5 L 177.8 244.9 L 181.6 245.2 L 185.5 245.4 L 189.4 245.6 L 193.3 245.7 L 197.2 245.8 L 201.1 245.8 L 205.1 245.9 L 209.1 245.8 L 213.1 245.8 L 217.1 245.8 L 221.1 245.8 L 225.2 245.8 L 229.2 245.7 L 233.3 245.6 L 237.3 245.5 L 241.3 245.3 L 245.3 245.0 L 249.2 244.6 L 253.1 244.1 L 257.0 243.5 L 260.8 242.8 L 264.5 241.9 L 268.2 240.9 L 271.7 239.7 L 275.2 238.3 L 278.6 236.7 L 281.9 235.0 L 285.2 233.0 L 288.4 230.9 L 291.5 228.5 L 294.5 226.0 L 297.3 223.3 L 300.0 220.4 L 302.5 217.4 L 304.8 214.3 L 306.8 211.0 L 308.7 207.7 L 310.6 204.9 L 313.4 203.7 L 317.0 204.0 L 320.7 204.9 L 324.3 205.8 L 327.9 206.7 L 331.6 207.5 L 335.4 208.2 L 339.4 208.7 L 343.4 208.9 L 347.5 208.8 L 351.6 208.5 L 355.6 207.8 L 359.3 206.8 L 362.8 205.3 L 366.1 203.6 L 369.3 201.6 L 372.3 199.3 L 375.1 196.7 L 377.7 194.0 L 380.1 191.0 L 382.2 187.8 L 384.1 184.5 L 385.8 181.1 L 387.2 177.5 L 388.4 173.8 L 389.3 170.1 L 390.0 166.3 L 390.4 162.4 L 390.5 158.6 L 390.4 154.7 L 390.0 150.9 L 389.4 147.1 L 388.5 143.4 L 387.4 139.7 L 386.1 136.1 L 384.5 132.6 L 382.7 129.2 L 380.7 125.9 L 378.4 122.8 L 375.9 119.8 L 373.3 117.0 L 370.4 114.4 L 367.3 112.0 L 364.1 109.8 L 360.7 107.8 L 357.2 106.1 L 353.6 104.7 L 349.9 103.5 L 346.1 102.7 L 342.3 102.2 L 338.4 102.0 L 334.6 102.2 L 330.7 102.7 L 326.8 103.7 L 323.0 105.0 L 319.2 106.4 L 315.5 107.8 L 311.9 108.9 L 308.4 109.6 L 304.9 109.8 L 301.4 109.2 L 298.1 107.8 L 294.9 105.8 L 291.9 103.4 L 289.0 100.9 L 286.1 98.4 L 283.1 95.9 L 280.1 93.5 L 277.0 91.3 L 273.8 89.3 L 270.5 87.5 L 267.1 86.0 L 263.6 84.6 L 260.0 83.4 L 256.4 82.3 L 252.7 81.3 L 249.0 80.4 L 245.2 79.6 L 241.4 78.9 L 237.5 78.3 L 233.6 77.7 L 229.8 77.1 L 226.3 76.4 L 223.8 75.1 L 222.9 72.8 L 223.8 69.2 L 225.4 65.1 L 226.2 60.9 L 225.4 57.3 L 222.8 54.6 L 219.5 52.5 L 215.7 51.2 L 211.9 50.6 L 208.2 50.8 Z M 335.2 119.2 C 344.0 118.0 354.0 120.5 361.5 127.5 C 370.0 135.5 373.0 148.0 371.5 160.0 C 370.0 172.0 363.0 182.0 351.5 186.5 C 342.0 190.0 331.0 188.0 324.5 180.5 C 318.0 173.0 317.0 160.0 318.5 147.5 C 319.5 137.0 325.5 121.0 335.2 119.2 Z" fill="url(#logo-tp-body)" stroke="#7c2d12" stroke-width="3" fill-rule="evenodd" stroke-linejoin="round"/>
+
+  <!-- Линии ободка крышки и блик ручки -->
+  <path d="M 132 105 C 168 116 250 116 288 105" fill="none" stroke="#541c09" stroke-width="2.5" opacity="0.6"/>
+  <circle cx="210" cy="62" r="11" fill="url(#logo-knob-glow)"/>
+  <circle cx="206" cy="57" r="3.2" fill="#ffffff" opacity="0.85"/>
+  <path d="M 326 112 C 352 110 382 130 380 162 C 378 188 355 204 330 205" fill="none" stroke="#ffaa90" stroke-width="2.8" stroke-linecap="round" opacity="0.4"/>
+
+  <!-- Кавайные аниме-глазки с яркими бликами -->
+  <circle cx="186" cy="164" r="8.5" fill="#2b0c15"/>
+  <circle cx="183.5" cy="161.5" r="3.2" fill="#ffffff"/>
+  <circle cx="187.5" cy="165.5" r="1.4" fill="#ffffff"/>
+
+  <circle cx="234" cy="164" r="8.5" fill="#2b0c15"/>
+  <circle cx="231.5" cy="161.5" r="3.2" fill="#ffffff"/>
+  <circle cx="235.5" cy="165.5" r="1.4" fill="#ffffff"/>
+
+  <!-- Нежный розовый румянец на щечках -->
+  <ellipse cx="170" cy="172" rx="8.5" ry="5" fill="#f43f5e" opacity="0.5"/>
+  <ellipse cx="250" cy="172" rx="8.5" ry="5" fill="#f43f5e" opacity="0.5"/>
+
+  <!-- Улыбающийся ротик -->
+  <path d="M 204 170 Q 210 176 216 170" fill="none" stroke="#2b0c15" stroke-width="2.8" stroke-linecap="round"/>
+
+  <!-- Золотая печать удачи 吉 на животике -->
+  <g transform="translate(201, 192)">
+    <rect x="0" y="0" width="18" height="18" rx="4" fill="#f59e0b" stroke="#78350f" stroke-width="1.5"/>
+    <text x="9" y="14" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="900" fill="#78350f" text-anchor="middle">吉</text>
+  </g>
+</svg>
+      </div>
+      <div class="logo-text">
+        <div class="logo-title">Chainik<span>Check</span></div>
+        <div class="logo-subtitle">Проверка и расчет поставок из Китая • chainikcheck.ru</div>
+      </div>
+    </a>
+    <div class="header-links">
+      <div class="badge-kwork">
+        <div class="dot"></div>
+        5.0 Рейтинг на Kwork
+      </div>
+      <a href="https://kwork.ru/user/milligat" target="_blank" rel="noopener" class="btn-cta-top">
+        Заказать на Kwork
+      </a>
+    </div>
+  </header>
+
+  <!-- Главный блок (Hero) с персонажем Чайничком -->
+  <section class="hero">
+    <div class="hero-character-wrapper">
+      <svg class="teapot-hero-art" viewBox="0 0 480 320" width="420" height="280" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="tp-shadow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#2b0c15" stop-opacity="0.22"/>
+            <stop offset="60%" stop-color="#2b0c15" stop-opacity="0.07"/>
+            <stop offset="100%" stop-color="#2b0c15" stop-opacity="0"/>
+          </radialGradient>
+          <linearGradient id="tp-body" x1="15%" y1="10%" x2="85%" y2="90%">
+            <stop offset="0%" stop-color="#ff7f5c"/>
+            <stop offset="42%" stop-color="#ea580c"/>
+            <stop offset="85%" stop-color="#9a3412"/>
+            <stop offset="100%" stop-color="#6c2207"/>
+          </linearGradient>
+          <radialGradient id="knob-glow" cx="35%" cy="30%" r="65%">
+            <stop offset="0%" stop-color="#ffffff" stop-opacity="0.6"/>
+            <stop offset="40%" stop-color="#ff8e70" stop-opacity="0.2"/>
+            <stop offset="100%" stop-color="#7c2d12" stop-opacity="0"/>
+          </radialGradient>
+          <linearGradient id="coin-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#fde047"/>
+            <stop offset="60%" stop-color="#eab308"/>
+            <stop offset="100%" stop-color="#ca8a04"/>
+          </linearGradient>
+          <linearGradient id="steam-grad" x1="0%" y1="100%" x2="0%" y2="0%">
+            <stop offset="0%" stop-color="#ea580c" stop-opacity="0.5"/>
+            <stop offset="100%" stop-color="#fed7aa" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+
+        <!-- Тени на полу -->
+        <ellipse cx="228" cy="254" rx="115" ry="16" fill="url(#tp-shadow)"/>
+        <ellipse cx="55" cy="256" rx="26" ry="7" fill="url(#tp-shadow)"/>
+        <ellipse cx="430" cy="254" rx="26" ry="7" fill="url(#tp-shadow)"/>
+
+        <!-- Левый объект: Коробка карго из Китая с бейджем CBM -->
+        <g class="float-slow-left">
+          <rect x="34" y="206" width="46" height="42" rx="6" fill="#f59e0b" stroke="#d97706" stroke-width="2"/>
+          <rect x="34" y="220" width="46" height="8" fill="#d97706" opacity="0.35"/>
+          <rect x="49" y="206" width="8" height="42" fill="#d97706" opacity="0.35"/>
+          <rect x="40" y="214" width="18" height="12" rx="2" fill="#ffffff"/>
+          <line x1="43" y1="217" x2="55" y2="217" stroke="#ea580c" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="43" y1="220" x2="52" y2="220" stroke="#78716c" stroke-width="1" stroke-linecap="round"/>
+          <line x1="43" y1="223" x2="50" y2="223" stroke="#78716c" stroke-width="1" stroke-linecap="round"/>
+          <rect x="38" y="184" width="38" height="17" rx="8" fill="#ffffff" stroke="#f59e0b" stroke-width="1.5"/>
+          <text x="57" y="196" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" font-weight="800" fill="#b45309" text-anchor="middle">CBM</text>
+        </g>
+
+        <!-- Правый объект: Золотая монетка Юаня (¥) и бейдж проверки ФТС -->
+        <g class="float-slow-right">
+          <circle cx="430" cy="222" r="22" fill="url(#coin-gold)" stroke="#a16207" stroke-width="2"/>
+          <circle cx="430" cy="222" r="17" fill="none" stroke="#fef08a" stroke-width="1.5" stroke-dasharray="2 2"/>
+          <text x="430" y="230" font-family="'Plus Jakarta Sans', sans-serif" font-size="20" font-weight="900" fill="#78350f" text-anchor="middle">¥</text>
+          <circle cx="449" cy="204" r="10" fill="#10b981" stroke="#ffffff" stroke-width="2"/>
+          <path d="M444 204 L447 207 L454 200" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+
+        <!-- Чайничек Си Ши: чистый сглаженный контур -->
+        <g class="teapot-body-anim">
+          <path d="M 204.6 51.5 L 201.0 52.8 L 197.8 54.8 L 195.4 57.5 L 194.2 60.7 L 194.5 64.6 L 195.7 68.6 L 196.7 72.3 L 196.8 75.3 L 194.9 76.9 L 191.0 77.5 L 186.7 77.8 L 182.9 78.4 L 179.3 79.2 L 175.7 80.1 L 172.1 81.1 L 168.4 82.1 L 164.7 83.3 L 161.0 84.6 L 157.4 86.0 L 153.9 87.6 L 150.5 89.4 L 147.3 91.3 L 144.2 93.3 L 141.3 95.4 L 138.4 97.6 L 135.5 99.8 L 132.5 102.0 L 129.5 104.2 L 126.4 106.2 L 123.1 107.8 L 119.0 108.2 L 115.0 107.4 L 111.0 106.0 L 107.0 104.2 L 103.0 102.2 L 99.4 105.5 L 95.8 108.9 L 92.1 112.2 L 88.5 115.5 L 89.2 118.0 L 91.1 120.5 L 93.3 122.4 L 95.4 125.6 L 97.3 128.9 L 99.0 132.3 L 100.4 135.8 L 101.6 139.3 L 102.5 143.0 L 103.1 146.7 L 103.5 150.6 L 103.7 154.5 L 103.9 158.4 L 103.9 162.3 L 104.1 166.2 L 104.3 170.1 L 104.7 173.8 L 105.3 177.5 L 106.0 181.1 L 106.8 184.7 L 107.8 188.2 L 108.9 191.6 L 110.3 194.9 L 111.8 198.1 L 113.4 201.3 L 115.2 204.4 L 117.0 207.5 L 119.0 210.6 L 121.1 213.6 L 123.4 216.6 L 125.7 219.5 L 128.1 222.3 L 130.6 225.0 L 133.2 227.6 L 136.0 230.1 L 138.9 232.4 L 141.9 234.5 L 145.1 236.4 L 148.4 238.1 L 151.9 239.5 L 155.5 240.7 L 159.1 241.7 L 162.8 242.6 L 166.5 243.3 L 170.3 244.0 L 174.0 244.5 L 177.8 244.9 L 181.6 245.2 L 185.5 245.4 L 189.4 245.6 L 193.3 245.7 L 197.2 245.8 L 201.1 245.8 L 205.1 245.9 L 209.1 245.8 L 213.1 245.8 L 217.1 245.8 L 221.1 245.8 L 225.2 245.8 L 229.2 245.7 L 233.3 245.6 L 237.3 245.5 L 241.3 245.3 L 245.3 245.0 L 249.2 244.6 L 253.1 244.1 L 257.0 243.5 L 260.8 242.8 L 264.5 241.9 L 268.2 240.9 L 271.7 239.7 L 275.2 238.3 L 278.6 236.7 L 281.9 235.0 L 285.2 233.0 L 288.4 230.9 L 291.5 228.5 L 294.5 226.0 L 297.3 223.3 L 300.0 220.4 L 302.5 217.4 L 304.8 214.3 L 306.8 211.0 L 308.7 207.7 L 310.6 204.9 L 313.4 203.7 L 317.0 204.0 L 320.7 204.9 L 324.3 205.8 L 327.9 206.7 L 331.6 207.5 L 335.4 208.2 L 339.4 208.7 L 343.4 208.9 L 347.5 208.8 L 351.6 208.5 L 355.6 207.8 L 359.3 206.8 L 362.8 205.3 L 366.1 203.6 L 369.3 201.6 L 372.3 199.3 L 375.1 196.7 L 377.7 194.0 L 380.1 191.0 L 382.2 187.8 L 384.1 184.5 L 385.8 181.1 L 387.2 177.5 L 388.4 173.8 L 389.3 170.1 L 390.0 166.3 L 390.4 162.4 L 390.5 158.6 L 390.4 154.7 L 390.0 150.9 L 389.4 147.1 L 388.5 143.4 L 387.4 139.7 L 386.1 136.1 L 384.5 132.6 L 382.7 129.2 L 380.7 125.9 L 378.4 122.8 L 375.9 119.8 L 373.3 117.0 L 370.4 114.4 L 367.3 112.0 L 364.1 109.8 L 360.7 107.8 L 357.2 106.1 L 353.6 104.7 L 349.9 103.5 L 346.1 102.7 L 342.3 102.2 L 338.4 102.0 L 334.6 102.2 L 330.7 102.7 L 326.8 103.7 L 323.0 105.0 L 319.2 106.4 L 315.5 107.8 L 311.9 108.9 L 308.4 109.6 L 304.9 109.8 L 301.4 109.2 L 298.1 107.8 L 294.9 105.8 L 291.9 103.4 L 289.0 100.9 L 286.1 98.4 L 283.1 95.9 L 280.1 93.5 L 277.0 91.3 L 273.8 89.3 L 270.5 87.5 L 267.1 86.0 L 263.6 84.6 L 260.0 83.4 L 256.4 82.3 L 252.7 81.3 L 249.0 80.4 L 245.2 79.6 L 241.4 78.9 L 237.5 78.3 L 233.6 77.7 L 229.8 77.1 L 226.3 76.4 L 223.8 75.1 L 222.9 72.8 L 223.8 69.2 L 225.4 65.1 L 226.2 60.9 L 225.4 57.3 L 222.8 54.6 L 219.5 52.5 L 215.7 51.2 L 211.9 50.6 L 208.2 50.8 Z M 335.2 119.2 C 344.0 118.0 354.0 120.5 361.5 127.5 C 370.0 135.5 373.0 148.0 371.5 160.0 C 370.0 172.0 363.0 182.0 351.5 186.5 C 342.0 190.0 331.0 188.0 324.5 180.5 C 318.0 173.0 317.0 160.0 318.5 147.5 C 319.5 137.0 325.5 121.0 335.2 119.2 Z"
+                fill="url(#tp-body)" stroke="#7c2d12" stroke-width="2.5" fill-rule="evenodd" stroke-linejoin="round"/>
+
+          <path d="M 103.0 102.2 L 88.5 115.5" fill="none" stroke="#ffaa90" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M 132 105 C 168 116 250 116 288 105" fill="none" stroke="#541c09" stroke-width="2.2" opacity="0.6"/>
+          <path d="M 133 107 C 169 117.5 249 117.5 287 107" fill="none" stroke="#ffaa90" stroke-width="1.2" opacity="0.5"/>
+
+          <path d="M 200 74 C 206 76 215 76 220 74" fill="none" stroke="#6c2207" stroke-width="2.0" stroke-linecap="round" opacity="0.5"/>
+          <circle cx="210" cy="62" r="11" fill="url(#knob-glow)"/>
+          <circle cx="206" cy="57" r="3.0" fill="#ffffff" opacity="0.85"/>
+
+          <path d="M 326 112 C 352 110 382 130 380 162 C 378 188 355 204 330 205" fill="none" stroke="#ffaa90" stroke-width="2.5" stroke-linecap="round" opacity="0.35"/>
+
+          <circle cx="186" cy="164" r="8.5" fill="#2b0c15"/>
+          <circle cx="183.5" cy="161.5" r="3.2" fill="#ffffff"/>
+          <circle cx="187.5" cy="165.5" r="1.4" fill="#ffffff"/>
+
+          <circle cx="234" cy="164" r="8.5" fill="#2b0c15"/>
+          <circle cx="231.5" cy="161.5" r="3.2" fill="#ffffff"/>
+          <circle cx="235.5" cy="165.5" r="1.4" fill="#ffffff"/>
+
+          <ellipse cx="170" cy="172" rx="8.5" ry="5" fill="#f43f5e" opacity="0.45"/>
+          <ellipse cx="250" cy="172" rx="8.5" ry="5" fill="#f43f5e" opacity="0.45"/>
+
+          <path d="M 204 170 Q 210 176 216 170" fill="none" stroke="#2b0c15" stroke-width="2.6" stroke-linecap="round"/>
+
+          <g transform="translate(201, 192)">
+            <rect x="0" y="0" width="18" height="18" rx="4" fill="#f59e0b" stroke="#78350f" stroke-width="1.5"/>
+            <text x="9" y="14" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="900" fill="#78350f" text-anchor="middle">吉</text>
+          </g>
+
+          <g class="steam-steam">
+            <path class="steam-puff puff-1" d="M 95.8 108.9 C 90 85 96 68 88 50 C 82 34 89 20 96 8" fill="none" stroke="url(#steam-grad)" stroke-width="4.5" stroke-linecap="round"/>
+            <path class="steam-puff puff-2" d="M 97.5 106.0 C 103 82 98 64 104 46 C 110 30 104 16 99 4" fill="none" stroke="url(#steam-grad)" stroke-width="3.5" stroke-linecap="round"/>
+            <g class="steam-tag tag-1">
+              <rect x="46" y="24" width="30" height="18" rx="9" fill="#ffffff" stroke="#ea580c" stroke-width="1.5" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.1))"/>
+              <text x="61" y="36" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="900" fill="#ea580c" text-anchor="middle">20%</text>
+            </g>
+            <g class="steam-tag tag-2">
+              <circle cx="112" cy="28" r="10" fill="#10b981" stroke="#ffffff" stroke-width="2"/>
+              <path d="M 108 28 L 111 31 L 117 25" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </div>
+
+    <!-- Уважительное позиционирование -->
+    <div class="hero-pill">🇨🇳 5-в-1 Экосистема ВЭД: Китай - Россия</div>
+    <h1>Точные расчеты для селлеров<br><span>и импортеров из Китая</span></h1>
+    <p>
+      Независимый онлайн-калькулятор CBM, плотности груза, таможенных пошлин, НДС 20% и экосбора РОП. Мгновенная калькуляция без скрытых комиссий и наценок перевозчиков.
+    </p>
+  </section>
+
+  <!-- Переключатель 5 вкладок (Табы) -->
+  
+  <div class="tabs-wrapper">
+    <nav class="tabs-nav">
+      <a href="index.html" class="tab-btn active">📦 Расчет CBM и доставки</a>
+      <a href="customs.html" class="tab-btn">🏛️ Таможня и пошлины</a>
+      <a href="incoterms.html" class="tab-btn">📜 Риски Инкотермс</a>
+      <a href="invoice-packing.html" class="tab-btn">📋 Инвойс & Пакинг</a>
+      <a href="rop-ecofee.html" class="tab-btn">🌿 Экосбор РОП</a>
+    </nav>
+  </div>
+<section class="tab-content active" id="tab-0">
+    <div class="tool-grid">
+      <!-- ЛЕВАЯ КОЛОНКА: ШАГ 1 И ШАГ 2 -->
+      <div>
+        <!-- ШАГ 1: Параметры коробки, партии и сборы -->
+        <div class="card">
+          <div class="step-header">
+            <div class="step-header-main">
+              <span class="step-num">1</span>
+              <div class="step-title-wrap">
+                <div class="step-badge-tag">Шаг 1 из 3 • Параметры груза и сборы</div>
+                <h2 class="step-title">Габариты партии и закупка</h2>
+                <div class="step-desc">Введите габариты коробки, вес, закупку на фабрике (в $ или ¥) и параметры упаковки.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div>
+              <label for="box-l">Длина (см):</label>
+              <input type="number" id="box-l" value="60" min="1" oninput="calcCBM()">
+            </div>
+            <div>
+              <label for="box-w">Ширина (см):</label>
+              <input type="number" id="box-w" value="40" min="1" oninput="calcCBM()">
+            </div>
+            <div>
+              <label for="box-h">Высота (см):</label>
+              <input type="number" id="box-h" value="40" min="1" oninput="calcCBM()">
+            </div>
+          </div>
+
+          <div class="form-row-2">
+            <div>
+              <label for="boxes-count">Количество коробок (мест):</label>
+              <input type="number" id="boxes-count" value="30" min="1" oninput="calcCBM()">
+            </div>
+            <div>
+              <label for="total-weight">Общий физический вес (кг):</label>
+              <input type="number" id="total-weight" value="450" min="1" oninput="calcCBM()">
+            </div>
+          </div>
+
+          <div class="form-row-2">
+            <div>
+              <label for="cargo-val">Закупка партии товара:</label>
+              <div class="currency-input-group">
+                <input type="number" id="cargo-val" value="3500" min="1" oninput="calcCBM()">
+                <select id="cargo-val-curr" onchange="calcCBM()">
+                  <option value="USD" selected>$ Доллары (USD)</option>
+                  <option value="CNY">¥ Юани (CNY / 1688)</option>
+                </select>
+              </div>
+              <div style="font-size:11.5px; color:#64748b; margin-top:5px; display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+                <span id="cargo-val-sub">~295 190 ₽ по курсу ЦБ</span>
+                <span style="color:#cbd5e1;">•</span>
+                <label for="currency-mode-select" style="font-size:11px; margin:0; color:#475569;">Курс:</label>
+                <select id="currency-mode-select" onchange="changeCurrencyMode()" style="font-size:11px; padding:2px 6px; border-radius:4px; border:1px solid #cbd5e1; background:#ffffff; cursor:pointer;">
+                  <option value="cbr" selected>ЦБ РФ</option>
+                  <option value="cargo">Карго (+3%)</option>
+                  <option value="custom">Свой курс</option>
+                </select>
+                <input type="number" id="custom-usd-input" style="display:none; width:65px; padding:2px 5px; font-size:11px; border-radius:4px; border:1px solid #cbd5e1;" placeholder="Курс $" step="0.5" oninput="calcCBM()">
+              </div>
+            </div>
+            <div>
+              <label for="items-count">Всего единиц товара (шт):</label>
+              <input type="number" id="items-count" value="1200" min="1" oninput="calcCBM()">
+              <div style="font-size:11.5px; color:#64748b; margin-top:4px;">По 40 шт в одной коробке</div>
+            </div>
+          </div>
+
+          <!-- Скрытые расходы карго из базы знаний Kwork #31 -->
+          <div style="margin-top: 14px; padding-top: 14px; border-top: 1px dashed var(--border-color);">
+            <div class="form-row-2">
+              <div>
+                <label for="cargo-packaging">Складская упаковка в Китае:</label>
+                <select id="cargo-packaging" class="calc-select" onchange="calcCBM()">
+                  <option value="4" selected>Мешок + скотч ($4 / место) - Стандарт</option>
+                  <option value="6">Мешок + защитные уголки ($6 / место)</option>
+                  <option value="12">Деревянная обрешетка ($12 / место, хрупкое)</option>
+                  <option value="0">Без доп. упаковки фабрики ($0)</option>
+                </select>
+              </div>
+              <div>
+                <label for="cargo-insurance">Страхование груза:</label>
+                <select id="cargo-insurance" class="calc-select" onchange="calcCBM()">
+                  <option value="0.02" selected>2% от закупки (Стандарт: утеря, конфискация)</option>
+                  <option value="0.01">1% от закупки (Только тотальная гибель фуры)</option>
+                  <option value="0.03">3% от закупки (Хрупкий груз, стекло, техника)</option>
+                  <option value="0">0% (Без страховки, возврат до $5/кг)</option>
+                </select>
+              </div>
+            </div>
+
+            <label class="calc-checkbox-label">
+              <input type="checkbox" id="include-terminal-fee" checked onchange="calcCBM()">
+              <span>Въезд и разгрузка (ПРР) на рынке в Москве (ТЯК Люблино / Южные Ворота: 3.5 ₽/кг)</span>
+            </label>
+          </div>
+
+          <!-- Экспресс-сводка физических параметров партии -->
+          <div class="step-summary-bar">
+            <div class="summary-chip">
+              Объем 1 коробки: <strong id="chip-box-vol">0.096 м³</strong>
+            </div>
+            <div class="summary-chip">
+              Вес 1 коробки: <strong id="chip-box-wt">15.0 кг</strong>
+            </div>
+            <div class="summary-chip highlight">
+              Общий объем: <strong id="chip-total-cbm">2.88 CBM (м³)</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- ШАГ 2: Выбор способа и тарифа доставки -->
+        <div class="card" style="margin-top: 20px;">
+          <div class="step-header">
+            <div class="step-header-main">
+              <span class="step-num">2</span>
+              <div class="step-title-wrap">
+                <div class="step-badge-tag">Шаг 2 из 3 • Способ доставки</div>
+                <h2 class="step-title">Выбор логистического плеча</h2>
+                <div class="step-desc">Кликните на подходящий способ доставки. Ставка адаптируется под реальную плотность груза.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tariff-grid" id="tariff-grid">
+            <div class="tariff-option active" id="tariff-auto-fast" onclick="selectTariff('auto-fast')">
+              <div class="tariff-top">
+                <span class="tariff-name">🚛 Быстрое авто</span>
+                <span class="tariff-badge popular">Выбор селлеров</span>
+              </div>
+              <div class="tariff-days">13-18 дней в пути</div>
+              <div class="tariff-rate" id="rate-auto-fast">~$2.80 / кг</div>
+            </div>
+
+            <div class="tariff-option" id="tariff-auto-std" onclick="selectTariff('auto-std')">
+              <div class="tariff-top">
+                <span class="tariff-name">🚚 Стандарт авто</span>
+                <span class="tariff-badge">Эконом</span>
+              </div>
+              <div class="tariff-days">18-25 дней в пути</div>
+              <div class="tariff-rate" id="rate-auto-std">~$2.40 / кг</div>
+            </div>
+
+            <div class="tariff-option" id="tariff-rail" onclick="selectTariff('rail')">
+              <div class="tariff-top">
+                <span class="tariff-name">🚂 ЖД контейнер</span>
+                <span class="tariff-badge">Для тяжелого</span>
+              </div>
+              <div class="tariff-days">25-35 дней в пути</div>
+              <div class="tariff-rate" id="rate-rail">~$2.10 / кг</div>
+            </div>
+
+            <div class="tariff-option" id="tariff-air" onclick="selectTariff('air')">
+              <div class="tariff-top">
+                <span class="tariff-name">✈️ Авиа доставка</span>
+                <span class="tariff-badge">Экспресс</span>
+              </div>
+              <div class="tariff-days">5-8 дней в пути</div>
+              <div class="tariff-rate" id="rate-air">~$8.20 / кг</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ПРАВАЯ КОЛОНКА: ШАГ 3 (ИТОГОВЫЙ РАСЧЕТ) + АУДИТ KWORK -->
+      <div>
+        <div class="results-card">
+          <div class="step-header">
+            <div class="step-header-main">
+              <span class="step-num green">3</span>
+              <div class="step-title-wrap">
+                <div class="step-badge-tag" style="color:var(--brand-green);">Шаг 3 из 3 • Итоговый расчет</div>
+                <h2 class="step-title">Себестоимость партии и 1 единицы</h2>
+              </div>
+            </div>
+            <div class="status-badge" id="cbm-density-badge">Стандартная плотность</div>
+          </div>
+
+          <!-- Главные цифры результата: 4 ключевые метрики селлера -->
+          <div class="hero-metric-grid-4">
+            <div class="hero-metric-item">
+              <div class="hero-metric-label">Доставка на 1 шт:</div>
+              <div class="hero-metric-value" id="res-per-item">~1.21 $</div>
+              <div class="hero-metric-sub" id="res-per-item-rub">~102 ₽ на ед.</div>
+            </div>
+            <div class="hero-metric-item highlight-cost">
+              <div class="hero-metric-label">Себестоимость 1 шт в РФ:</div>
+              <div class="hero-metric-value" id="res-total-unit-cost">~348 ₽</div>
+              <div class="hero-metric-sub">закупка + доставка</div>
+            </div>
+            <div class="hero-metric-item secondary">
+              <div class="hero-metric-label">Итого доставка партии:</div>
+              <div class="hero-metric-value" id="res-total-delivery">$1 450</div>
+              <div class="hero-metric-sub" id="res-total-rub">~122 293 ₽ по курсу</div>
+            </div>
+            <div class="hero-metric-item secondary">
+              <div class="hero-metric-label">Полный бюджет партии:</div>
+              <div class="hero-metric-value" id="res-grand-total">~417 483 ₽</div>
+              <div class="hero-metric-sub" id="res-grand-total-sub">$4 950 под ключ</div>
+            </div>
+          </div>
+
+          <!-- Детализация затрат под ключ -->
+          <div class="metrics-list">
+            <div class="metric-line">
+              <span class="metric-name">Общий объем партии (CBM):</span>
+              <strong class="metric-value highlight" id="res-cbm">2.88 м³</strong>
+            </div>
+            <div class="metric-line">
+              <span class="metric-name">Фактическая плотность груза:</span>
+              <strong class="metric-value" id="res-density">156.3 кг/м³</strong>
+            </div>
+            <div class="metric-line">
+              <span class="metric-name">Примененный тариф фрахта:</span>
+              <strong class="metric-value" id="res-applied-rate">$2.80 / кг</strong>
+            </div>
+            <div class="metric-line">
+              <span class="metric-name">Магистральный фрахт Китай - Москва:</span>
+              <strong class="metric-value" id="res-freight-cost">~$1 260 (106 268 ₽)</strong>
+            </div>
+            <div class="metric-line">
+              <span class="metric-name">Складская упаковка в Китае:</span>
+              <strong class="metric-value" id="res-pack-cost">~$120 (10 121 ₽)</strong>
+            </div>
+            <div class="metric-line">
+              <span class="metric-name">Страховка груза:</span>
+              <strong class="metric-value" id="res-insurance-cost">~$70 (5 904 ₽)</strong>
+            </div>
+            <div class="metric-line">
+              <span class="metric-name">Разгрузка в Москве (ТЯК / Южные Ворота):</span>
+              <strong class="metric-value" id="res-terminal-cost">1 575 ₽</strong>
+            </div>
+            <div class="metric-line">
+              <span class="metric-name">Закупка товара на фабрике:</span>
+              <strong class="metric-value" id="res-purchase-cost">~$3 500 (295 190 ₽)</strong>
+            </div>
+            <div class="metric-line">
+              <span class="metric-name">Срок доставки партии:</span>
+              <strong class="metric-value" id="res-transit-days">13-18 дней</strong>
+            </div>
+          </div>
+
+          <!-- Совет по оптимизации плотности из базы знаний Kwork -->
+          <div class="density-insight-box">
+            <div class="insight-icon">💡</div>
+            <div id="density-insight-text">
+              <strong>Совет по плотности:</strong> Плотность партии 156 кг/м³ попадает в базовый тариф. Если сжать коробки на 4-5 см по высоте (увеличив плотность до 200+ кг/м³), ставка снизится на $0.3-0.5 за кг, сэкономив до $180.
+            </div>
+          </div>
+
+          <!-- Кнопка копирования расчета -->
+          <button class="btn-copy-calc" onclick="copyCalculation('cbm')">
+            <span>📋</span> <span id="copy-btn-cbm-text">Скопировать расчет доставки</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- ПОЛНОШИРИННЫЙ БАННЕР KWORK #31 ВНИЗУ (НА ВСЮ ШИРИНУ) -->
+      <div class="kwork-offer-card">
+        <div class="kwork-left">
+          <div class="kwork-pill-price">Профессиональный аудит • 5 000 ₽</div>
+          <div class="kwork-offer-title">
+            Полная финансовая раскладка доставки партии под ключ: проверка КП перевозчика и защита от приписок CBM
+          </div>
+          <ul class="kwork-offer-features">
+            <li><span>✓</span> 100% расчет цепочки: склад в Китае, упаковка, страховка, магистраль, терминал в Москве</li>
+            <li><span>✓</span> Независимый аудит коммерческого предложения (КП) вашего карго или экспедитора</li>
+            <li><span>✓</span> Выявление скрытых надбавок за въезд на Южные Ворота/ТЯК и приписок объема CBM</li>
+            <li><span>✓</span> Готовая расчетная модель в Excel + памятка по безопасной приемке груза</li>
+          </ul>
+        </div>
+        <div class="kwork-right">
+          <a href="https://kwork.ru/personal-assistant/54910504/rasschitayu-dostavku-iz-kitaya-obem-cbm-plotnost-i-sebestoimost" target="_blank" rel="noopener" class="btn-kwork-order">
+            <span>Заказать аудит доставки за 5 000 ₽ на Kwork</span>
+          </a>
+          <div class="kwork-trust-line">
+            <span>🛡️</span> Безопасная сделка Kwork • 100% гарантия
+          </div>
+          <div class="disclaimer-box">
+            Расчет строится на рыночных стандартах плотности и реальных тарифах проверенных перевозчиков. Защищаем селлеров от навязанных сборов и приписок объема.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- ========================================== -->
+  <!-- ВКЛАДКА 2: ТАМОЖНЯ, ПОШЛИНЫ И НДС (ЕТТ ЕАЭС) -->
+  <!-- ========================================== -->
+  <!-- ======================================================= -->
+  <!-- СПРАВОЧНИК ИМПОРТЕРА: ПРОФИЛЬНЫЙ SEO & GEO БЛОК С ФОРМУЛАМИ -->
+  <!-- ======================================================= -->
+  <section class="seo-knowledge-section">
+    <div class="seo-knowledge-header">
+      <h2>Справочник по расчету CBM, плотности и тарифам карго из Китая</h2>
+      <p>Практические стандарты измерения габаритов, градации ставок карго и формулы себестоимости партии для селлеров маркетплейсов.</p>
+    </div>
+    <div class="faq-grid">
+      <article class="faq-card">
+        <h3>📦 Как рассчитать объем партии в CBM</h3>
+        <p>CBM (Cubic Meter) представляет собой объем груза в кубических метрах. Для вычисления объема одной коробки перемножаются ее габариты в метрах: длина, ширина и высота. Полученное значение умножается на общее количество коробок партии.</p>
+        <div class="faq-formula-box">CBM = (Длина, см * Ширина, см * Высота, см / 1 000 000) * Количество коробок</div>
+        <p><strong>Текущий расчет вашей партии:</strong> <span id="kb-boxes-cnt">30</span> коробок имеют объем <strong id="kb-box-vol">0.096</strong> м³ каждая. Суммарный объем партии: <strong id="kb-total-cbm">2.88</strong> CBM (м³). Китайские склады карго измеряют внешние габариты по выпуклостям скотча, поэтому реальный объем может превышать теоретический на 5-10%.</p>
+      </article>
+      <article class="faq-card">
+        <h3>⚖️ Плотность груза и ее влияние на ставку карго</h3>
+        <p>Плотность - ключевой параметр ценообразования в карго доставке. Она показывает, сколько килограммов весит один кубический метр вашего груза, и вычисляется делением физического веса партии на общий объем в CBM.</p>
+        <div class="faq-formula-box">Плотность (кг/м³) = Общий физический вес (кг) / Объем партии (CBM)</div>
+        <p><strong>Фактическая плотность груза:</strong> при физическом весе <span id="kb-total-wt">450</span> кг и объеме <span id="kb-density-cbm">2.88</span> CBM плотность равна <strong id="kb-density-val">156.3</strong> кг/м³ (<span id="kb-density-status">Стандартная плотность</span>). При плотности свыше 300 кг/м³ действует минимальный тариф ($1.8-2.2/кг), а ниже 100 кг/м³ расчет идет за объем ($240-280/м³).</p>
+      </article>
+      <article class="faq-card">
+        <h3>📐 Объемный вес (кубатурный груз) vs физический вес</h3>
+        <p>В международной логистике действует правило оплачиваемого веса (Chargeable Weight). Если объемный вес превышает физический, перевозчик рассчитывает фрахт исходя из объема.</p>
+        <div class="faq-formula-box">Оплачиваемый вес (кг) = MAX(Физический вес, Объем CBM * 167)</div>
+        <p><strong>Совет по оптимизации:</strong> Уменьшение высоты коробки всего на 4-5 см с помощью вакуумирования или плотной укладки увеличивает плотность партии, переводя груз в более дешевую тарифную сетку, что экономит от $100 до $300 на каждой поставке.</p>
+      </article>
+      <article class="faq-card">
+        <h3>💰 Формула расчета себестоимости единицы товара в РФ</h3>
+        <p>Полная себестоимость единицы включает фабричную закупку, конвертацию валюты, магистральный фрахт, складскую упаковку в КНР, страховку партии и разгрузку на оптовом рынке Москвы.</p>
+        <div class="faq-formula-box">Себестоимость 1 шт (руб) = (Закупка + Доставка + Упаковка + Страховка + ПРР) / Количество товара</div>
+        <p><strong>Итог для вашей партии:</strong> закупка <span id="kb-purchase-val">$3 500</span> + логистика <span id="kb-freight-val">$1 469</span> = Полный бюджет <strong id="kb-budget-val">~419 065 ₽</strong>. Себестоимость 1 шт в РФ под ключ: <strong id="kb-unit-cost">~349 ₽</strong>.</p>
+      </article>
+    </div>
+  </section>
+<footer class="footer">
+    <div class="footer-container">
+      <div class="footer-columns">
+        <!-- Колонка 1: О проекте -->
+        <div>
+          <div class="footer-col-title">ChainikCheck</div>
+          <p class="footer-about-text">
+            Независимый аналитический портал и калькулятор логистики из Китая для селлеров маркетплейсов и импортеров. Автономные расчеты CBM, пошлин, рисков контрактов и экосбора РОП.
+          </p>
+          <div class="footer-legal-badge">
+            <span>🔒</span> Локальные вычисления (Client-Side)
+          </div>
+        </div>
+
+        <!-- Колонка 2: Навигация по сервисам -->
+        <div>
+          <div class="footer-col-title">Инструменты ВЭД</div>
+          <ul class="footer-nav-list">
+            <li><a href="index.html">Калькулятор CBM и доставки</a></li>
+            <li><a href="customs.html">Таможенные пошлины и НДС</a></li>
+            <li><a href="incoterms.html">Матрица рисков Инкотермс</a></li>
+            <li><a href="invoice-packing.html">Валидатор инвойса и пакинга</a></li>
+            <li><a href="rop-ecofee.html">Калькулятор экосбора РОП</a></li>
+          </ul>
+        </div>
+
+        <!-- Колонка 3: Правовая защита и документы -->
+        <div>
+          <div class="footer-col-title">Правовая информация</div>
+          <ul class="footer-nav-list">
+            <li><button onclick="openModal('privacy')">Политика конфиденциальности (152-ФЗ)</button></li>
+            <li><button onclick="openModal('terms')">Пользовательское соглашение</button></li>
+            <li><button onclick="openModal('disclaimer')">Отказ от ответственности (Дисклеймер)</button></li>
+            <li><button onclick="openModal('cookies')">Правила использования файлов cookie</button></li>
+            <li><button onclick="openModal('kwork-rules')">Регламент услуг на Kwork.ru</button></li>
+          </ul>
+        </div>
+
+        <!-- Колонка 4: Связь и обращения -->
+        <div>
+          <div class="footer-col-title">Связь и поддержка</div>
+          <p class="footer-about-text">
+            Вопросы по работе калькулятора, предложения и правовые запросы принимаются через официальный профиль эксперта на Kwork:
+            <br>
+            <a href="https://kwork.ru/user/milligat" target="_blank" rel="noopener" style="color:var(--brand-orange); font-weight:800; font-size:13px; display:inline-flex; align-items:center; gap:5px; margin-top:5px;">
+              <span>💬</span> <span>Написать в ЛС на Kwork</span>
+            </a>
+          </p>
+          <p class="footer-about-text">
+            Официальный аккаунт исполнителя:
+            <br>
+            <strong style="color:var(--text-hero); font-size:12px;">kwork.ru/user/milligat</strong>
+          </p>
+        </div>
+      </div>
+
+      <!-- Официальное юридическое уведомление (ст. 437 ГК РФ) -->
+      <div class="footer-legal-notice">
+        <strong>Официальное правовое уведомление и ограничение ответственности:</strong> Информация и расчетные формулы, размещенные на веб-ресурсе chainikcheck.ru, носят исключительно справочный, научно-познавательный и предварительный характер и ни при каких условиях не являются публичной офертой, определяемой положениями пункта 2 статьи 437 Гражданского кодекса РФ, официальной финансовой, экспедиторской или таможенной консультацией. Сервис chainikcheck.ru не осуществляет коммерческую деятельность по таможенному декларированию и экспедированию грузов. Индивидуальные экспертные аналитические услуги предоставляются независимым специалистом на платформе Kwork в строгом соответствии с регламентом площадки.
+      </div>
+
+      <!-- Нижняя строка -->
+      <div class="footer-bottom-row">
+        <div class="footer-copyright">
+          (c) 2026 ChainikCheck (chainikcheck.ru). Все права защищены.
+        </div>
+        <div class="footer-meta-badges">
+          <span>ФЗ № 152-ФЗ «О персональных данных»</span>
+          <span>Стандарты ФТС РФ 2026</span>
+          <span>Инкотермс-2020 ICC</span>
+          <span>Ст. 437 ГК РФ</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================= -->
+  <!-- ИНТЕРАКТИВНЫЕ МОДАЛЬНЫЕ ОКНА ЮРИДИЧЕСКИХ ДОКУМЕНТОВ       -->
+  <!-- ========================================================= -->
+  <div class="modal-overlay" id="legal-modal-overlay" onclick="closeModalOnBackdrop(event)">
+    <div class="modal-container">
+      <div class="modal-header">
+        <div class="modal-title" id="modal-title-text">
+          <span>📄</span> Документ
+        </div>
+        <button class="modal-close-btn" onclick="closeModal()" aria-label="Закрыть">&times;</button>
+      </div>
+      <div class="modal-body" id="modal-body-content">
+        <!-- Текст документа подставляется через JS -->
+      </div>
+      <div class="modal-footer">
+        <button class="modal-btn-close" onclick="closeModal()">Понятно и согласен</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cookie Consent Banner -->
+  <div class="cookie-banner" id="cookie-banner">
+    <div class="cookie-text">
+      Мы используем технические файлы cookie для сохранения настроек калькулятора. Сервис не собирает персональные данные. Подробнее в <a href="javascript:void(0)" onclick="openModal('cookies')">Политике cookie</a>.
+    </div>
+    <div class="cookie-actions">
+      <button class="btn-cookie-accept" onclick="acceptCookies()">Принять</button>
+    </div>
+  </div>
+
+  <!-- Toast для копирования -->
+  <div class="toast-copy" id="toast-copy">
+    <span>✓</span> Расчет скопирован в буфер обмена
+  </div>
+
+  <!-- Интерактивный JavaScript для расчетов, модалок и cookies -->
+  
+  <!-- Единый скрипт расчетов и модалок ChainikCheck -->
+  <script src="app.js"></script>
+</body>
+</html>
