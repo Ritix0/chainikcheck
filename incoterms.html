@@ -2284,6 +2284,76 @@
           </div>
         </div>
 
+      </div>
+
+      <!-- ПРАВАЯ КОЛОНКА -->
+      <div>
+        <div class="results-card">
+          <div class="step-header">
+            <div class="step-header-main">
+              <span class="step-num green">✓</span>
+              <div class="step-title-wrap">
+                <div class="step-badge-tag" style="color:var(--brand-green);">Юридический аудит сделки</div>
+                <h2 class="step-title">Распределение рисков и расходов</h2>
+              </div>
+            </div>
+            <div class="status-badge" id="incoterms-badge">FOB Рекомендован</div>
+          </div>
+
+          <!-- Метрика перехода рисков -->
+          <div class="hero-metric-box" style="grid-template-columns: 1fr; margin-bottom:16px;">
+            <div class="hero-metric-item secondary">
+              <div class="hero-metric-label">Точка перехода рисков на покупателя:</div>
+              <div class="hero-metric-value" style="font-size:16.5px; color:var(--text-hero);" id="inco-risk-point">Борт судна в порту Китая (Ningbo/Shanghai)</div>
+              <div class="hero-metric-sub" id="inco-risk-sub">до этой точки все повреждения возмещает фабрика</div>
+            </div>
+          </div>
+
+          <!-- Сводка валютного контроля банка -->
+          <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:10px; padding:12px; margin-bottom:16px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+              <span style="font-size:12px; font-weight:700; color:var(--text-hero);">Валютный контроль контракта:</span>
+              <strong style="font-size:12.5px; color:var(--brand-orange);" id="res-inco-val-rub">3 135 000 ₽</strong>
+            </div>
+            <div style="font-size:12px; color:var(--text-muted); line-height:1.45;" id="res-inco-bank-rule">
+              Порог УНК (3 млн ₽) превышен. Требуется присвоение УНК в банке и фиксация срока возврата аванса до 30 дней.
+            </div>
+          </div>
+
+          <!-- Список зон ответственности (Кто платит) -->
+          <div class="metrics-list" style="margin-bottom:16px;">
+            <div class="metric-line">
+              <span class="metric-name">Вид транспорта:</span>
+              <strong class="metric-value" id="inco-transport">Морской / речной транспорт</strong>
+            </div>
+            <div class="metric-line">
+              <span class="metric-name">Экспортная декларация КНР:</span>
+              <strong class="metric-value" id="inco-export">Оплачивает поставщик</strong>
+            </div>
+            <div class="metric-line">
+              <span class="metric-name">Международный фрахт:</span>
+              <strong class="metric-value highlight" id="inco-freight">Оплачивает покупатель</strong>
+            </div>
+            <div class="metric-line">
+              <span class="metric-name">Страхование партии:</span>
+              <strong class="metric-value" id="inco-insurance">Покупатель (по желанию)</strong>
+            </div>
+            <div class="metric-line">
+              <span class="metric-name">Терминальные сборы РФ (THC):</span>
+              <strong class="metric-value" id="inco-terminal">Покупатель (прямой тариф)</strong>
+            </div>
+            <div class="metric-line">
+              <span class="metric-name">Таможенная очистка в РФ:</span>
+              <strong class="metric-value" id="inco-customs">Покупатель (пошлина + НДС 20%)</strong>
+            </div>
+          </div>
+
+          <!-- Кнопка копирования полного аудита -->
+          <button class="btn-copy-calc" onclick="copyCalculation('incoterms')">
+            <span>📋</span> <span id="copy-btn-inco-text">Скопировать юридический аудит сделки</span>
+          </button>
+        </div>
+
         <!-- ШАГ 3: ЧЕК-ЛИСТ 7 ЛОВУШЕК КИТАЙСКИХ ФАБРИК -->
         <div class="card">
           <div class="step-header">
@@ -2382,74 +2452,6 @@
           </div>
         </div>
       </div>
-
-      <!-- ПРАВАЯ КОЛОНКА -->
-      <div>
-        <div class="results-card">
-          <div class="step-header">
-            <div class="step-header-main">
-              <span class="step-num green">✓</span>
-              <div class="step-title-wrap">
-                <div class="step-badge-tag" style="color:var(--brand-green);">Юридический аудит сделки</div>
-                <h2 class="step-title">Распределение рисков и расходов</h2>
-              </div>
-            </div>
-            <div class="status-badge" id="incoterms-badge">FOB Рекомендован</div>
-          </div>
-
-          <!-- Метрика перехода рисков -->
-          <div class="hero-metric-box" style="grid-template-columns: 1fr; margin-bottom:16px;">
-            <div class="hero-metric-item secondary">
-              <div class="hero-metric-label">Точка перехода рисков на покупателя:</div>
-              <div class="hero-metric-value" style="font-size:16.5px; color:var(--text-hero);" id="inco-risk-point">Борт судна в порту Китая (Ningbo/Shanghai)</div>
-              <div class="hero-metric-sub" id="inco-risk-sub">до этой точки все повреждения возмещает фабрика</div>
-            </div>
-          </div>
-
-          <!-- Сводка валютного контроля банка -->
-          <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:10px; padding:12px; margin-bottom:16px;">
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
-              <span style="font-size:12px; font-weight:700; color:var(--text-hero);">Валютный контроль контракта:</span>
-              <strong style="font-size:12.5px; color:var(--brand-orange);" id="res-inco-val-rub">3 135 000 ₽</strong>
-            </div>
-            <div style="font-size:12px; color:var(--text-muted); line-height:1.45;" id="res-inco-bank-rule">
-              Порог УНК (3 млн ₽) превышен. Требуется присвоение УНК в банке и фиксация срока возврата аванса до 30 дней.
-            </div>
-          </div>
-
-          <!-- Список зон ответственности (Кто платит) -->
-          <div class="metrics-list" style="margin-bottom:16px;">
-            <div class="metric-line">
-              <span class="metric-name">Вид транспорта:</span>
-              <strong class="metric-value" id="inco-transport">Морской / речной транспорт</strong>
-            </div>
-            <div class="metric-line">
-              <span class="metric-name">Экспортная декларация КНР:</span>
-              <strong class="metric-value" id="inco-export">Оплачивает поставщик</strong>
-            </div>
-            <div class="metric-line">
-              <span class="metric-name">Международный фрахт:</span>
-              <strong class="metric-value highlight" id="inco-freight">Оплачивает покупатель</strong>
-            </div>
-            <div class="metric-line">
-              <span class="metric-name">Страхование партии:</span>
-              <strong class="metric-value" id="inco-insurance">Покупатель (по желанию)</strong>
-            </div>
-            <div class="metric-line">
-              <span class="metric-name">Терминальные сборы РФ (THC):</span>
-              <strong class="metric-value" id="inco-terminal">Покупатель (прямой тариф)</strong>
-            </div>
-            <div class="metric-line">
-              <span class="metric-name">Таможенная очистка в РФ:</span>
-              <strong class="metric-value" id="inco-customs">Покупатель (пошлина + НДС 20%)</strong>
-            </div>
-          </div>
-
-          <!-- Кнопка копирования полного аудита -->
-          <button class="btn-copy-calc" onclick="copyCalculation('incoterms')">
-            <span>📋</span> <span id="copy-btn-inco-text">Скопировать юридический аудит сделки</span>
-          </button>
-        </div>
       </div>
 
       <!-- ПОЛНОШИРИННЫЙ БАННЕР KWORK #33 ВНИЗУ (НА ВСЮ ШИРИНУ) -->
