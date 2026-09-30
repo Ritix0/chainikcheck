@@ -1,3 +1,51 @@
+# robots.txt for ChainikCheck.ru
 User-agent: *
 Allow: /
+
+# --- ПОИСКОВЫЕ НЕЙРОСЕТИ (SEARCH & CITATIONS) ---
+User-agent: OAI-SearchBot
+Allow: /
+Allow: /llms.txt
+
+User-agent: ChatGPT-User
+Allow: /
+Allow: /llms.txt
+
+User-agent: PerplexityBot
+Allow: /
+Allow: /llms.txt
+
+User-agent: Claude-Web
+Allow: /
+Allow: /llms.txt
+
+User-agent: DeepSeekSpider
+Allow: /
+Allow: /llms.txt
+
+User-agent: SberBot
+Allow: /
+Allow: /llms.txt
+
+User-agent: Applebot-Extended
+Allow: /
+Allow: /llms.txt
+
+User-agent: Google-Extended
+Allow: /
+Allow: /llms.txt
+
+User-agent: YandexBot
+Allow: /
+Allow: /llms.txt
+
+# --- БЛОКИРОВКА ПАРАЗИТНЫХ БОТОВ ОБУЧЕНИЯ И СПАМА ---
+User-agent: Bytespider
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+Host: chainikcheck.ru
 Sitemap: https://chainikcheck.ru/sitemap.xml
+# llms.txt: https://chainikcheck.ru/llms.txt
